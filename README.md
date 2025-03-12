@@ -10,3 +10,17 @@ homepage</i><b>.
 <p>
 </body>
 <html>
+<head>
+<style>
+body {
+    background-color: #ADD8E6;
+}
+h1 {
+    background-color: ##00FFFF;
+}
+p {
+    background-color: #00FFFF);
+}
+</style>
+</head>
+<body>
