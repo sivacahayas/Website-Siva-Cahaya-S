@@ -7,12 +7,17 @@ body {
 }
 
 header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #002a8d;
     color: white;
     padding: 20px;
 }
 
 nav {
+    display: flex;
+    gap: 15px;
     margin-top: 10px;
 }
 
