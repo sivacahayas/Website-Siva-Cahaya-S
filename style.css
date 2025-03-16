@@ -57,6 +57,15 @@ main {
 
 .intro a:hover {
     text-decoration: underline;
+.blue-link {
+    color: blue; /* Warna biru untuk teks */
+    text-decoration: none; /* Menghilangkan garis bawah default */
+    font-weight: bold; /* Membuat teks lebih tebal */
+}
+
+.blue-link:hover {
+    text-decoration: underline; /* Garis bawah saat dihover */
+
 }
 
 footer {
