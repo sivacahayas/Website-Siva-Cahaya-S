@@ -1,27 +1,33 @@
-<html>
-  <head>
-    <script src="https://cdn.tailwindcss.com"></script>
-    </head>
-<h2 class="text-lg font-bold mb-2">Contact Us</h2>
-  <p class="mb-6">Jika anda memiliki pertanyaan, saran atau ingin berdiskusi lebih lanjut. Silahkan isi formulir dibawah ini ya!</p>
-<form>
-  <div class="mb-4">
-    <label for="Alamat Email"
- class="block mb-1">Email:</label>
-     <input type="Email"
- <id="Email" class=w-full
-   border-gray-400 p-2" placeholder="Masukkan Email kamu">
-    </div>
-  <div class="mb-4">
-<label for="phone" 
-  class="block mb-1">Nomor Telepon:</label>
-      <input type="tel" id="phone" 
-  class="w-full border-gray-400 p-2" placeholder="Masukkan nomor telepon kamu">
-</div>
-<button type="submit"
-  class="bg-gray-200 border
-  border-gray-400 p-2">Kirim</button>
-</form>
-</div>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="contact-container">
+        <h1 class="blue-bold">Contact Us</h1>
+        <p>Jika anda memiliki pertanyaan, saran atau ingin berdiskusi lebih lanjut. Silahkan isi formulir dibawah ini ya!</p>
+
+        <form action="https://example.com/submit-form" method="POST">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" placeholder="Masukkan Nama kamu" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Masukkan Email kamu" required>
+
+            <label for="phone">Nomor Telepon:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Masukkan nomor telepon kamu" required>
+              
+            <label for="pesan">Pesan:</label>
+            <textarea id="pesan" name="pesan" placeholder="Masukkan Pesan kamu" required></textarea>
+
+            <button type="submit">Kirim</button>
+        </form>
+    </section>
+
 </body>
 </html>
