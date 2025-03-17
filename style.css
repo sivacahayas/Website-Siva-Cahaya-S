@@ -114,6 +114,38 @@ p {
     text-align: left; 
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+    text-align: left;
+}
+
+form label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+form input, 
+form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    margin-top: 15px;
+    background-color: #002a8d;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 footer {
     background-color: #333;
     color: white;
