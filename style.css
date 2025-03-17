@@ -55,7 +55,7 @@ main {
 }
 
 p {
-    text-align: left;
+    text-align: justify;
     max-width: 800px; 
     margin: auto; 
     line-height: 1.6;
