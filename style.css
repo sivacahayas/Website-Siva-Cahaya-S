@@ -33,9 +33,11 @@ nav {
     top: 10px;
     right: 10px;
     gap: 10px;
+    list-style: none;
 }
 
 nav a {
+    display: inline-block;
     color: white;
     text-decoration: none;
     padding: 10px 15px;
