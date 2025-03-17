@@ -8,17 +8,29 @@ body {
 
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     background-color: #002a8d;
     color: white;
-    padding: 20px;
+    padding: 10px 20px;
+    height: 60px;
+    width: 100%; 
+} 
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    padding: 5px 10px;
+    text-align: center; 
+    width: 100%;
+    line-height: 60px;
 }
 
 nav {
     display: flex;
-    gap: 15px;
-    margin-top: 10px;
+    gap: 10px;
 }
 
 nav a {
