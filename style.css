@@ -40,14 +40,11 @@ main {
     padding: 20px;
 }
 
-.intro {
+.intro h2 {
+    color: #002a8d;
     max-width: 800px;
     margin: auto;
     text-align: left;
-}
-
-.intro h2 {
-    color: #002a8d;
 }
 
 .intro a {
@@ -57,14 +54,16 @@ main {
 
 .intro a:hover {
     text-decoration: underline;
+}
+
 .blue-link {
-    color: blue; /* Warna biru untuk teks */
-    text-decoration: none; /* Menghilangkan garis bawah default */
-    font-weight: bold; /* Membuat teks lebih tebal */
+    color: blue;
+    text-decoration: none; 
+    font-weight: bold;
 }
 
 .blue-link:hover {
-    text-decoration: underline; /* Garis bawah saat dihover */
+    text-decoration: underline; 
 
 }
 
