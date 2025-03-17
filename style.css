@@ -12,6 +12,7 @@ header {
     align-items: center;
     background-color: #002a8d;
     color: white;
+    text-align: center;
     padding: 10px 20px;
     height: 60px;
     width: 100%; 
@@ -41,15 +42,18 @@ nav a {
     color: white;
     text-decoration: none;
     padding: 10px 15px;
-    margin: 5px;
+    margin: 0 15px;
+    font-weight: bold;
     border-radius: 5px;
 }
 
-nav a:hover, .active {
+nav a :hover, .active {
     background-color: white;
     color: #002a8d;
     font-weight: bold;
     padding: 8px 12px;
+    text-decoration: underline;
+    border-radius: 5px;
 }
 
 main {
