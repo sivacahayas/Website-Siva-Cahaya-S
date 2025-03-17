@@ -54,6 +54,12 @@ main {
     padding: 20px;
 }
 
+p {
+    text-align: left;
+    max-width: 800px; 
+    margin: auto; 
+    line-height: 1.6;
+}
 .intro h2 {
     color: #002a8d;
     max-width: 800px;
