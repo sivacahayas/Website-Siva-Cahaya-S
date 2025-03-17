@@ -66,6 +66,27 @@ main {
     text-decoration: underline; 
 
 }
+.biodata-table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+.biodata-table th, 
+.biodata-table td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.biodata-table th {
+    text-align: center; 
+    background-color: #002a8d;
+    color: white;
+}
+
+.biodata-table td {
+    text-align: left; 
+}
 
 footer {
     background-color: #333;
