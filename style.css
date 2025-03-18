@@ -8,7 +8,7 @@ body {
 
 header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     background-color: #98AFC7;
     color: white;
@@ -16,6 +16,7 @@ header {
     padding: 10px 20px;
     height: 60px;
     width: 100%; 
+    position: relative;
 } 
 
 h1 {
@@ -25,6 +26,7 @@ h1 {
     margin: 0;
     padding: 5px 10px;
     text-align: center; 
+    flex-grow: 1;
     width: 100%;
     line-height: 60px;
 }
@@ -49,7 +51,7 @@ nav a {
     border-radius: 5px;
 }
 
-nav a:hover, nav a.active {
+nav a:hover, .active {
     background-color: white;
     color: #002a8d;
     font-weight: bold;
