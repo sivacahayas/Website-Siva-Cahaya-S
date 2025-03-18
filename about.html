@@ -3,74 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Halaman Lain</title>
+    <title>Halaman Lain</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {},
+            },
+        };
+    </script>
     <link rel="stylesheet" href="style.css">
-    
 </head>
-<body>
-  
-     <header>
-        <h1>About Me</h1>
-        <nav>
-           <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="contact-us.html">Contact</a></li>
+<body class="bg-gray-100 text-gray-900">
+
+    <!-- Header -->
+    <header class="bg-[#98AFC7] text-white py-4">
+        <h1 class="text-3xl font-bold text-center">About Me</h1>
+        <nav class="mt-2">
+            <ul class="flex justify-center space-x-6">
+                <li><a href="index.html" class="hover:underline">Home</a></li>
+                <li><a href="about.html" class="hover:underline">About Me</a></li>
+                <li><a href="contact-us.html" class="hover:underline">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-<p>Selamat datang di halaman pribadi saya! Melalui halaman ini, saya akan memberikan gambaran mengenai diri saya. Semoga dengan adanya halaman ini, dapat membantu anda dan senang bertemu dengan anda !.</p>
+    <content>
+    <main class="max-w-3xl mx-auto bg-white shadow-md rounded-lg p-6 mt-6">
+        <p class="text-justify">
+            Selamat datang di halaman pribadi saya! Melalui halaman ini, saya akan memberikan gambaran mengenai diri saya.
+            Semoga dengan adanya halaman ini, dapat membantu anda dan senang bertemu dengan anda!.
+        </p>
 
-
-       <table class="biodata-table">
-
-          <tr>
-               <th>Informasi</th>
-               <th>Detail</th>
-
+        <table>
+        <table class="w-full border-collapse border border-gray-300 mt-6">
+            <tr class="bg-[#98AFC7] text-white">
+                <th class="border border-gray-300 px-4 py-2">Informasi</th>
+                <th class="border border-gray-300 px-4 py-2">Detail</th>
             </tr>
             <tr>
-
-                <td>Nama</td>
-                <td>Siva Cahaya Suhailah</td>
-
+                <td class="border border-gray-300 px-4 py-2">Nama</td>
+                <td class="border border-gray-300 px-4 py-2">Siva Cahaya Suhailah</td>
             </tr>
             <tr>
-
-                <td>NIM</td>
-                <td>220709046</td>
-
+                <td class="border border-gray-300 px-4 py-2">NIM</td>
+                <td class="border border-gray-300 px-4 py-2">220709046</td>
             </tr>
             <tr>
-
-                <td>Program Studi</td>
-                <td>Perpustakaan dan Sains Informasi</td>
-
+                <td class="border border-gray-300 px-4 py-2">Program Studi</td>
+                <td class="border border-gray-300 px-4 py-2">Perpustakaan dan Sains Informasi</td>
             </tr>
             <tr>
-
-                <td>Fakultas</td>
-                <td>Fakultas Ilmu Budaya</td>
-
+                <td class="border border-gray-300 px-4 py-2">Fakultas</td>
+                <td class="border border-gray-300 px-4 py-2">Fakultas Ilmu Budaya</td>
             </tr>
             <tr>
-
-                <td>Universitas</td>
-                <td>Universitas Sumatera Utara</td>
-
+                <td class="border border-gray-300 px-4 py-2">Universitas</td>
+                <td class="border border-gray-300 px-4 py-2">Universitas Sumatera Utara</td>
             </tr>
             <tr>
-
-                <td>Email</td>
-                <td>sivacahayas@gmail.com</td>
-
+                <td class="border border-gray-300 px-4 py-2">Email</td>
+                <td class="border border-gray-300 px-4 py-2">sivacahayas@gmail.com</td>
             </tr>
-
         </table>
-
-    </section>
-
+    </main>
 
 </body>
 </html>
