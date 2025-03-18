@@ -49,7 +49,7 @@ nav a {
     border-radius: 5px;
 }
 
-nav a :hover, .active {
+nav a:hover, nav a.active {
     background-color: white;
     color: #002a8d;
     font-weight: bold;
@@ -68,10 +68,11 @@ p {
     margin: auto; 
     line-height: 1.6;
 }
+
 .bold-text {
     font-weight: bold;
-
 }
+
 .intro h2 {
     color: #002a8d;
     max-width: 800px;
@@ -96,8 +97,8 @@ p {
 
 .blue-link:hover {
     text-decoration: underline; 
-
 }
+
 .biodata-table {
     width: 100%;
     margin: 20px auto;
@@ -108,22 +109,24 @@ p {
 .biodata-table td {
     border: 1px solid black;
     padding: 10px;
-    background-color: #98AFC7;
-    color: white;
 }
 
 .biodata-table th {
-    background-color: ##98AFC7;
+    background-color: #98AFC7;
     color: white;
     padding: 10px;
     text-align: center; 
 }
 
 .biodata-table td {
-    background-color: ##98AFC7;
+    background-color: white;
     color: black;
-    padding: 10px;
-    border: 1px solid black;
+}
+
+.biodata-table tr:first-child th, 
+.biodata-table tr:first-child td {
+    background-color: #98AFC7;
+    color: white;
 }
 
 form {
@@ -159,8 +162,9 @@ form button {
 }
 
 footer {
-    display: none;
-}
-.bold-text {
-    font-weight: bold;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background-color: #98AFC7;
+    color: white;
 }
