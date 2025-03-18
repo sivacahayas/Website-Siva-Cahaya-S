@@ -99,7 +99,7 @@ p {
 
 }
 .biodata-table {
-    width: 80%;
+    width: 100%;
     margin: 20px auto;
     border-collapse: collapse;
 }
@@ -113,13 +113,17 @@ p {
 }
 
 .biodata-table th {
-    text-align: center; 
     background-color: ##98AFC7;
     color: white;
+    padding: 10px;
+    text-align: center; 
 }
 
 .biodata-table td {
-    text-align: left; 
+    background-color: ##98AFC7;
+    color: black;
+    padding: 10px;
+    border: 1px solid black;
 }
 
 form {
