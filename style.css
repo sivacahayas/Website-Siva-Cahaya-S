@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -12,52 +13,43 @@ header {
     align-items: center;
     background-color: #98AFC7;
     color: white;
-    text-align: center;
-    padding: 10px 20px;
+    padding: 15px 20px;
     height: 60px;
-    width: 100%; 
+    width: 100%;
     position: relative;
-} 
+}
 
 h1 {
-    font-size: 24px;
+    font-size: 32px;
     font-weight: bold;
     color: white;
     margin: 0;
-    padding: 5px 10px;
+    flex-grow: 1;
     text-align: center;
-    flex-grow: 1; 
     line-height: 60px;
 }
 
 nav {
     display: flex;
-    justify-content: flex-end; 
     align-items: center;
-    gap: 16px; 
-    list-style: none;
-    padding: 0;
-    margin-left: auto; 
+    gap: 16px;
 }
 
 nav a {
-    display: inline-block;
     color: white;
     text-decoration: none;
     padding: 10px 15px;
-    margin: 0 15px;
     font-weight: bold;
     border-radius: 5px;
+    transition: 0.3s;
 }
 
 nav a:hover, .active {
     background-color: white;
     color: #002a8d;
-    font-weight: bold;
-    padding: 8px 12px;
     text-decoration: underline;
-    border-radius: 5px;
 }
+
 
 main {
     padding: 20px;
@@ -65,8 +57,8 @@ main {
 
 p {
     text-align: justify;
-    max-width: 800px; 
-    margin: auto; 
+    max-width: 800px;
+    margin: auto;
     line-height: 1.6;
 }
 
@@ -90,19 +82,9 @@ p {
     text-decoration: underline;
 }
 
-.blue-link {
-    color: blue;
-    text-decoration: none; 
-    font-weight: bold;
-}
-
-.blue-link:hover {
-    text-decoration: underline; 
-}
-
 .biodata-table {
     width: 100%;
-    max-width: 800px; 
+    max-width: 800px;
     margin: 20px auto;
     border-collapse: collapse;
 }
@@ -116,19 +98,12 @@ p {
 .biodata-table th {
     background-color: #98AFC7;
     color: white;
-    padding: 10px;
-    text-align: center; 
+    text-align: center;
 }
 
 .biodata-table td {
     background-color: white;
     color: black;
-}
-
-.biodata-table tr:first-child th, 
-.biodata-table tr:first-child td {
-    background-color: #98AFC7;
-    color: white;
 }
 
 form {
@@ -161,6 +136,11 @@ form button {
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background-color: #7a94b8;
 }
 
 footer {
