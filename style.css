@@ -112,7 +112,7 @@ p {
 
 .biodata-table th {
     text-align: center; 
-    background-color: #002a8d;
+    background-color: ##98AFC7;
     color: white;
 }
 
@@ -144,7 +144,7 @@ form textarea {
 
 form button {
     margin-top: 15px;
-    background-color: #002a8d;
+    background-color: ##98AFC7;
     color: white;
     border: none;
     padding: 10px;
