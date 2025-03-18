@@ -10,7 +10,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #abd4fe;
+    background-color: #002a8d;
     color: white;
     text-align: center;
     padding: 10px 20px;
@@ -67,6 +67,10 @@ p {
     max-width: 800px; 
     margin: auto; 
     line-height: 1.6;
+}
+.bold-text {
+    font-weight: bold;
+
 }
 .intro h2 {
     color: #002a8d;
@@ -153,4 +157,7 @@ footer {
     color: white;
     padding: 10px;
     margin-top: 20px;
+}
+.bold-text {
+    font-weight: bold;
 }
