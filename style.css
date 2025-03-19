@@ -143,11 +143,12 @@ form button:hover {
 }
 
 footer {
-    position: relative;
+    position: fixed; 
     bottom: 0;
-    left: 0;
+    left: 50%; 
+    transform: translateX(-50%);
     width: 100%;
-    background: #98AFC7;
+    background: #98AFC7; 
     color: white;
     text-align: center;
     padding: 10px 0;
