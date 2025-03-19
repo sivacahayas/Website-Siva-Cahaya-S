@@ -11,10 +11,43 @@
             alert("Welcome to Perpustakaan Siva Cahaya Suhailah");
         };
     </script>
-
+    <style>
+        body {
+            overflow: hidden;
+            position: relative;
+        }
+        .stars-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        .star {
+            position: absolute;
+            background-color: white;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: fall linear infinite, twinkle 2s infinite alternate;
+        }
+        @keyframes fall {
+            from {
+                transform: translateY(-10px);
+            }
+            to {
+                transform: translateY(100vh);
+            }
+        }
+        @keyframes twinkle {
+            0% { opacity: 0.3; }
+            50% { opacity: 1; }
+            100% { opacity: 0.3; }
+        }
+    </style>
 </head>
 <body class="bg-gray-100">
-
+    <div class="stars-container"></div>
     <header class="flex justify-between items-center bg-[#98AFC7] text-white p-4">
         <h1 class="text-xl font-bold">Perpustakaan Siva Cahaya Suhailah</h1>
         <nav class="flex flex-row gap-4">
@@ -23,18 +56,15 @@
             <a href="contact-us.html" class="text-white hover:underline">Contact Us</a>
         </nav>
     </header>
-
     <main class="p-6 max-w-3xl mx-auto bg-white shadow-md rounded-lg mt-6">
         <section>
             <h2 class="text-2xl font-bold text-[#98AFC7] text-center mb-4">
-    Halo! Selamat Datang di Perpustakaan Siva Cahaya Suhailah!
-</h2>
-
+                Halo! Selamat Datang di Perpustakaan Siva Cahaya Suhailah!
+            </h2>
             <p class="mt-4 text-center">
                 Selamat datang di halaman website saya! Terimakasih telah mengunjungi halaman website saya. 
                 Website ini berisi repository pribadi saya yang akan memuat beberapa tugas saya selama satu semester dalam memenuhi mata kuliah Pengembangan Web.
             </p>
-
             <p class="mt-4 leading-relaxed text-justify">
                 Website ini juga melakukan kolaborasi dengan perpustakaan lain yaitu 
                 <a href="https://library.usu.ac.id/" target="_blank" class="text-blue-700 underline font-bold" rel="noopener noreferrer">
@@ -42,14 +72,25 @@
                 </a>, yang menyediakan beberapa sumber daya informasi yang lebih lengkap. 
                 Saya berharap, dengan adanya website ini dapat membantu anda dalam menemukan informasi.
             </p>
-
-           
             <p class="mt-4 font-bold text-[#98AFC7] text-center">
                 Terimakasih telah berkunjung di website saya!
             </p>
-
         </section>
     </main>
-
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const container = document.querySelector(".stars-container");
+            function createStar() {
+                const star = document.createElement("div");
+                star.classList.add("star");
+                star.style.left = Math.random() * window.innerWidth + "px";
+                star.style.animationDuration = 3 + Math.random() * 2 + "s";
+                star.style.width = star.style.height = Math.random() * 5 + 2 + "px";
+                container.appendChild(star);
+                setTimeout(() => { star.remove(); }, 5000);
+            }
+            setInterval(createStar, 200);
+        });
+    </script>
 </body>
 </html>
