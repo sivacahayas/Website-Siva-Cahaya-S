@@ -53,6 +53,10 @@ nav a:hover, .active {
 main {
     padding: 20px;
 }
+.container {
+    margin-top: 10px;
+    padding-top: 5px;
+}
 
 p {
     text-align: justify;
