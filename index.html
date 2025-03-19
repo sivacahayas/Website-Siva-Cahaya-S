@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -73,10 +73,6 @@
             padding: 10px 0;
         }
 
-        footer p {
-            text-align: center;
-        }
-
         .dark-mode {
             background-color: #1a202c;
             color: white;
@@ -100,8 +96,8 @@
     </style>
 </head>
 <body class="bg-gray-100">
-    <div class="container"></div>
-    
+    <div class="stars-container"></div> 
+
     <header class="flex justify-between items-center bg-[#98AFC7] text-white p-4">
         <h1 class="text-xl font-bold">Perpustakaan Siva Cahaya Suhailah</h1>
         <nav class="flex flex-row gap-4">
@@ -180,17 +176,18 @@
             }
         });
 
-        /
         function updateTime() {
             const now = new Date();
+            const days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+            const dayName = days[now.getDay()];
             const hours = now.getHours().toString().padStart(2, "0");
             const minutes = now.getMinutes().toString().padStart(2, "0");
             const seconds = now.getSeconds().toString().padStart(2, "0");
-            document.getElementById("realTime").textContent = `${hours}:${minutes}:${seconds}`;
+            document.getElementById("realTime").textContent = `${dayName}, ${hours}:${minutes}:${seconds}`;
         }
-        
+
         setInterval(updateTime, 1000);
-        updateTime(); 
+        updateTime();
     </script>
 </body>
 </html>
