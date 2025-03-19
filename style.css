@@ -142,7 +142,6 @@ form button:hover {
     background-color: #7a94b8;
 }
 
-/* Footer */
 footer {
     background-color: #98AFC7; 
     color: white;
@@ -166,9 +165,12 @@ footer {
 
 .star {
     position: absolute;
-    top: -10px;
-    width: 20px;
-    height: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
     border-radius: 50%;
     background-color: yellow;
     animation: falling-star 5s linear infinite;
