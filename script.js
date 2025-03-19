@@ -35,4 +35,25 @@ document.addEventListener("DOMContentLoaded", function () {
     if (localStorage.getItem("theme") === "dark") {
         document.body.classList.add("dark-mode");
     }
+
+    function updateTime() {
+        const timeBox = document.getElementById("timeBox");
+        if (!timeBox) return; // Pastikan elemen ada sebelum update
+
+        const days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+        const now = new Date();
+
+        const dayName = days[now.getDay()];
+        const date = now.getDate().toString().padStart(2, '0');
+        const month = (now.getMonth() + 1).toString().padStart(2, '0');
+        const year = now.getFullYear();
+        const hours = now.getHours().toString().padStart(2, '0');
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const seconds = now.getSeconds().toString().padStart(2, '0');
+
+        timeBox.innerHTML = `${dayName}, ${date} ${month} ${year} pukul ${hours}.${minutes}.${seconds}`;
+    }
+
+    setInterval(updateTime, 1000);
+    updateTime(); 
 });
