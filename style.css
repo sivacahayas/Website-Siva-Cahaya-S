@@ -3,7 +3,8 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    background-color: white;
+    background-color: #E6E6FA; 
+    color: #333;
 }
 
 header {
@@ -141,12 +142,15 @@ form button:hover {
     background-color: #7a94b8;
 }
 
+/* Footer */
 footer {
-    display: block;
+    background-color: #98AFC7; 
+    color: white;
     text-align: center;
     padding: 10px;
-    background-color: #98AFC7;
-    color: white;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
 }
 
 @keyframes falling-star {
@@ -166,8 +170,6 @@ footer {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: white;
-    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    background-color: yellow;
     animation: falling-star 5s linear infinite;
-    
 }
