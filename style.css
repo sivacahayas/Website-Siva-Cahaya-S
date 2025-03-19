@@ -143,13 +143,15 @@ form button:hover {
 }
 
 footer {
-    background-color: #98AFC7; 
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #98AFC7;
     color: white;
     text-align: center;
-    padding: 10px;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
+    padding: 10px 0;
+    font-weight: bold;
 }
 
 @keyframes falling-star {
