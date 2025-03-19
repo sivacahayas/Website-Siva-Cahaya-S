@@ -35,6 +35,22 @@ style.innerHTML = `
         0% { transform: translateY(-10px); opacity: 1; }
         100% { transform: translateY(100vh); opacity: 0.5; }
     }
+
+    .raindrop {
+        position: absolute;
+        width: 2px;
+        height: 10px;
+        background-color: lightblue;
+        opacity: 0.7;
+    }
+
+    .splash {
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        background-color: lightblue;
+        border-radius: 50%;
+        opacity: 0.6;
+    }
 `;
 document.head.appendChild(style);
-
