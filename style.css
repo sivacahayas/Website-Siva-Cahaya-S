@@ -143,15 +143,16 @@ form button:hover {
 }
 
 footer {
+   display: flex;
+    justify-content: center; 
+    align-items: center;
     position: fixed; 
     bottom: 0;
-    left: 50%; 
-    transform: translateX(-50%);
+    left: 0;
     width: 100%;
-    background: #98AFC7; 
+    height: 50px; 
+    background-color: #98AFC7; 
     color: white;
-    text-align: center;
-    padding: 10px 0;
     font-weight: bold;
 }
 
