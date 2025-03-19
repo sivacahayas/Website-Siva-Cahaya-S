@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -77,7 +77,6 @@
             text-align: center;
         }
 
-        /* Mode Gelap */
         .dark-mode {
             background-color: #1a202c;
             color: white;
@@ -98,7 +97,6 @@
         .dark-mode a {
             color: #90cdf4;
         }
-
     </style>
 </head>
 <body class="bg-gray-100">
@@ -134,6 +132,12 @@
             <p class="mt-4 font-bold text-[#98AFC7] text-center">
                 Terimakasih telah berkunjung di website saya!
             </p>
+
+            <!-- Waktu Real-Time -->
+            <div id="timeBox" class="text-center mt-6 p-4 rounded-lg shadow-lg bg-gray-200">
+                <p class="text-gray-700">Waktu Saat Ini:</p>
+                <p id="realTime" class="text-xl font-bold text-[#002a8d]"></p>
+            </div>
         </section>
     </main>
 
@@ -156,7 +160,6 @@
             setInterval(createStar, 200);
         });
 
-        // Script Mode Gelap/Terang
         const toggleButton = document.getElementById("toggle-mode");
         const body = document.body;
 
@@ -176,6 +179,18 @@
                 localStorage.setItem("darkMode", "disabled");
             }
         });
+
+        /
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, "0");
+            const minutes = now.getMinutes().toString().padStart(2, "0");
+            const seconds = now.getSeconds().toString().padStart(2, "0");
+            document.getElementById("realTime").textContent = `${hours}:${minutes}:${seconds}`;
+        }
+        
+        setInterval(updateTime, 1000);
+        updateTime(); 
     </script>
 </body>
 </html>
