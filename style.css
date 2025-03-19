@@ -14,6 +14,12 @@ body {
     --text-color: white;
 }
 
+.dark-mode {
+    background-color: #222;
+    color: white;
+}
+
+
 header {
     position: fixed;
     top: 0;
@@ -27,6 +33,10 @@ header {
     color: white;
     padding: 15px 20px;
     height: 60px;
+}
+
+.dark-mode header {
+    background-color: #444;
 }
 
 h1, h2 {
@@ -69,6 +79,10 @@ nav a:hover, .active {
     background-color: var(--text-color);
     color: #98AFC7;
     text-decoration: underline;
+}
+
+.dark-mode nav a {
+    color: white;
 }
 
 main {
@@ -132,7 +146,15 @@ p {
     color: black;
 }
 
-/* Form */
+.dark-mode .biodata-table th {
+    background-color: #555;
+}
+
+.dark-mode .biodata-table td {
+    background-color: #333;
+    color: white;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -156,6 +178,13 @@ form textarea {
     box-sizing: border-box;
 }
 
+.dark-mode form input, 
+.dark-mode form textarea {
+    background-color: #444;
+    color: white;
+    border: 1px solid #888;
+}
+
 form button {
     margin-top: 15px;
     background-color: #98AFC7;
@@ -171,6 +200,15 @@ form button:hover {
     background-color: var(--hover-color);
 }
 
+.dark-mode button {
+    background-color: #ccc;
+    color: black;
+}
+
+.dark-mode button:hover {
+    background-color: #bbb;
+}
+
 footer {
     display: flex;
     justify-content: center; 
@@ -181,6 +219,23 @@ footer {
     background-color: var(--main-color);
     color: white;
     font-weight: bold;
+}
+
+#toggle-mode {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #98AFC7;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#toggle-mode:hover {
+    background-color: #789;
 }
 
 @keyframes falling-star {
