@@ -72,14 +72,38 @@
             text-align: center;
             padding: 10px 0;
         }
+
         footer p {
             text-align: center;
+        }
+
+        /* Mode Gelap */
+        .dark-mode {
+            background-color: #1a202c;
+            color: white;
+        }
+
+        .dark-mode main {
+            background-color: #2d3748;
+        }
+
+        .dark-mode header {
+            background-color: #4a5568;
+        }
+
+        .dark-mode footer {
+            background-color: #2c7a7b;
+        }
+
+        .dark-mode a {
+            color: #90cdf4;
         }
 
     </style>
 </head>
 <body class="bg-gray-100">
     <div class="container"></div>
+    
     <header class="flex justify-between items-center bg-[#98AFC7] text-white p-4">
         <h1 class="text-xl font-bold">Perpustakaan Siva Cahaya Suhailah</h1>
         <nav class="flex flex-row gap-4">
@@ -136,13 +160,20 @@
         const toggleButton = document.getElementById("toggle-mode");
         const body = document.body;
 
+        if (localStorage.getItem("darkMode") === "enabled") {
+            body.classList.add("dark-mode");
+            toggleButton.textContent = "☀️";
+        }
+
         toggleButton.addEventListener("click", function () {
             body.classList.toggle("dark-mode");
 
             if (body.classList.contains("dark-mode")) {
-                toggleButton.textContent = "☀️"; // 
+                toggleButton.textContent = "☀️";
+                localStorage.setItem("darkMode", "enabled");
             } else {
-                toggleButton.textContent = "🌙"; // 
+                toggleButton.textContent = "🌙";
+                localStorage.setItem("darkMode", "disabled");
             }
         });
     </script>
