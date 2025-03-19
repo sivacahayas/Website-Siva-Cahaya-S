@@ -87,6 +87,8 @@
             <a href="about.html" class="text-white hover:underline">About Me</a>
             <a href="contact-us.html" class="text-white hover:underline">Contact Us</a>
         </nav>
+        <!-- Tombol Mode Gelap/Terang -->
+        <button id="toggle-mode" class="ml-4 px-4 py-2 bg-gray-600 text-white rounded">🌙</button>
     </header>
 
     <main class="p-6 max-w-3xl mx-auto bg-white shadow-md rounded-lg mt-6">
@@ -128,6 +130,20 @@
                 setTimeout(() => { star.remove(); }, 5000);
             }
             setInterval(createStar, 200);
+        });
+
+        // Script Mode Gelap/Terang
+        const toggleButton = document.getElementById("toggle-mode");
+        const body = document.body;
+
+        toggleButton.addEventListener("click", function () {
+            body.classList.toggle("dark-mode");
+
+            if (body.classList.contains("dark-mode")) {
+                toggleButton.textContent = "☀️"; // 
+            } else {
+                toggleButton.textContent = "🌙"; // 
+            }
         });
     </script>
 </body>
