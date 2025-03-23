@@ -4,13 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Perpustakaan Siva Cahaya Suhailah</title>
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Style Eksternal (kalau mau) -->
   <link rel="stylesheet" href="style.css" />
+  
+  <!-- Alert On Load -->
   <script>
     window.onload = function() {
       alert("Welcome to Perpustakaan Siva Cahaya Suhailah");
     };
   </script>
+  
   <style>
     body {
       overflow-x: hidden;
@@ -48,6 +53,7 @@
       50% { opacity: 1; }
       100% { opacity: 0.3; }
     }
+
     .dark-mode {
       background-color: #1a202c;
       color: white;
@@ -66,10 +72,10 @@
     }
   </style>
 </head>
+
 <body class="bg-gray-100">
   <div class="stars-container"></div>
 
-  <!-- Header tanpa tombol toggle -->
   <header class="flex justify-between items-center bg-[#98AFC7] text-white p-4">
     <h1 class="text-xl font-bold">Perpustakaan Siva Cahaya Suhailah</h1>
     <nav class="flex gap-4">
@@ -79,18 +85,18 @@
     </nav>
   </header>
 
-  <!-- Konten Utama -->
   <main class="p-6 max-w-3xl mx-auto bg-white shadow-md rounded-lg mt-6">
     <section>
       <h2 class="text-2xl font-bold text-[#98AFC7] text-center mb-4">
         Halo! Selamat Datang di Perpustakaan Siva Cahaya Suhailah!
       </h2>
-      <!-- Paragraf Justify -->
+      
       <p class="mt-4" style="text-align: justify;">
         Selamat datang di halaman website saya! Terimakasih telah mengunjungi halaman website saya.
         Website ini berisi repository pribadi saya yang akan memuat beberapa tugas saya selama satu semester
         dalam memenuhi mata kuliah Pengembangan Web.
       </p>
+      
       <p class="mt-4" style="text-align: justify;">
         Website ini juga melakukan kolaborasi dengan perpustakaan lain yaitu
         <a href="https://library.usu.ac.id/" target="_blank" class="text-blue-700 underline font-bold" rel="noopener noreferrer">
@@ -99,30 +105,29 @@
         yang menyediakan beberapa sumber daya informasi yang lebih lengkap.
         Saya berharap, dengan adanya website ini dapat membantu anda dalam menemukan informasi.
       </p>
+      
       <p class="mt-4 font-bold text-[#98AFC7]" style="text-align: center;">
         Terimakasih telah berkunjung di website saya!
       </p>
 
-      <!-- Waktu Real-Time -->
       <div id="timeBox" class="text-center mt-6 p-4 rounded-lg shadow-lg bg-gray-200 text-xl font-bold text-[#002a8d]">
         <p class="text-gray-700">Waktu Saat Ini:</p>
         <p id="realTime"></p>
       </div>
 
-      <!-- Tombol Toggle Mode dipindah ke sini (di bawah waktu) -->
       <div class="text-center mt-4">
         <button id="toggle-mode" class="px-4 py-2 bg-gray-600 text-white rounded">🌙</button>
       </div>
     </section>
   </main>
-
+  
   <footer class="text-center p-4 bg-[#008080] text-white mt-auto">
     <p>© 2025 Perpustakaan Siva Cahaya Suhailah.</p>
   </footer>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      // Animasi Bintang
+      /* Animasi Bintang */
       const starContainer = document.createElement("div");
       starContainer.classList.add("stars-container");
       document.body.appendChild(starContainer);
@@ -142,7 +147,7 @@
       }
       setInterval(createStar, 300);
 
-      // Dark Mode Toggle
+      /* Toggle Dark Mode */
       const toggleButton = document.getElementById("toggle-mode");
       if (localStorage.getItem("darkMode") === "enabled") {
         document.body.classList.add("dark-mode");
@@ -159,7 +164,7 @@
         }
       });
 
-      // Update Waktu
+      /* Update Waktu */
       function updateTime() {
         const timeBox = document.getElementById("realTime");
         if (!timeBox) return;
