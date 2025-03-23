@@ -67,8 +67,9 @@
   </style>
 </head>
 <body class="bg-gray-100">
-   <div class="stars-container"></div>
+  <div class="stars-container"></div>
 
+  <!-- Header tanpa tombol toggle -->
   <header class="flex justify-between items-center bg-[#98AFC7] text-white p-4">
     <h1 class="text-xl font-bold">Perpustakaan Siva Cahaya Suhailah</h1>
     <nav class="flex gap-4">
@@ -76,7 +77,6 @@
       <a href="about.html" class="text-white hover:underline">About Me</a>
       <a href="contact-us.html" class="text-white hover:underline">Contact Us</a>
     </nav>
-    <button id="toggle-mode" class="ml-4 px-4 py-2 bg-gray-600 text-white rounded">🌙</button>
   </header>
 
   <!-- Konten Utama -->
@@ -85,13 +85,12 @@
       <h2 class="text-2xl font-bold text-[#98AFC7] text-center mb-4">
         Halo! Selamat Datang di Perpustakaan Siva Cahaya Suhailah!
       </h2>
-      <!-- Paragraf 1: Justify -->
+      <!-- Paragraf Justify -->
       <p class="mt-4" style="text-align: justify;">
         Selamat datang di halaman website saya! Terimakasih telah mengunjungi halaman website saya.
         Website ini berisi repository pribadi saya yang akan memuat beberapa tugas saya selama satu semester
         dalam memenuhi mata kuliah Pengembangan Web.
       </p>
-      <!-- Paragraf 2: Justify -->
       <p class="mt-4" style="text-align: justify;">
         Website ini juga melakukan kolaborasi dengan perpustakaan lain yaitu
         <a href="https://library.usu.ac.id/" target="_blank" class="text-blue-700 underline font-bold" rel="noopener noreferrer">
@@ -104,9 +103,15 @@
         Terimakasih telah berkunjung di website saya!
       </p>
 
+      <!-- Waktu Real-Time -->
       <div id="timeBox" class="text-center mt-6 p-4 rounded-lg shadow-lg bg-gray-200 text-xl font-bold text-[#002a8d]">
         <p class="text-gray-700">Waktu Saat Ini:</p>
         <p id="realTime"></p>
+      </div>
+
+      <!-- Tombol Toggle Mode dipindah ke sini (di bawah waktu) -->
+      <div class="text-center mt-4">
+        <button id="toggle-mode" class="px-4 py-2 bg-gray-600 text-white rounded">🌙</button>
       </div>
     </section>
   </main>
@@ -133,7 +138,6 @@
         star.style.animationDuration = `${Math.random() * 3 + 3}s`;
 
         starContainer.appendChild(star);
-
         setTimeout(() => star.remove(), 5000);
       }
       setInterval(createStar, 300);
