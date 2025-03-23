@@ -12,7 +12,6 @@
     };
   </script>
   <style>
-
     body {
       overflow-x: hidden;
       margin: 0;
@@ -70,7 +69,6 @@
 <body class="bg-gray-100">
    <div class="stars-container"></div>
 
-
   <header class="flex justify-between items-center bg-[#98AFC7] text-white p-4">
     <h1 class="text-xl font-bold">Perpustakaan Siva Cahaya Suhailah</h1>
     <nav class="flex gap-4">
@@ -87,23 +85,25 @@
       <h2 class="text-2xl font-bold text-[#98AFC7] text-center mb-4">
         Halo! Selamat Datang di Perpustakaan Siva Cahaya Suhailah!
       </h2>
-      <p class="mt-4 text-center">
+      <!-- Paragraf 1: Justify -->
+      <p class="mt-4" style="text-align: justify;">
         Selamat datang di halaman website saya! Terimakasih telah mengunjungi halaman website saya.
-        Website ini berisi repository pribadi saya yang akan memuat beberapa tugas saya selama satu semester dalam memenuhi mata kuliah Pengembangan Web.
+        Website ini berisi repository pribadi saya yang akan memuat beberapa tugas saya selama satu semester
+        dalam memenuhi mata kuliah Pengembangan Web.
       </p>
-      <p class="mt-4 text-center">
+      <!-- Paragraf 2: Justify -->
+      <p class="mt-4" style="text-align: justify;">
         Website ini juga melakukan kolaborasi dengan perpustakaan lain yaitu
         <a href="https://library.usu.ac.id/" target="_blank" class="text-blue-700 underline font-bold" rel="noopener noreferrer">
           Perpustakaan Universitas Sumatera Utara
         </a>,
-        yang menyediakan beberapa sumber daya informasi yang lebih lengkap. 
+        yang menyediakan beberapa sumber daya informasi yang lebih lengkap.
         Saya berharap, dengan adanya website ini dapat membantu anda dalam menemukan informasi.
       </p>
-      <p class="mt-4 font-bold text-[#98AFC7] text-center">
+      <p class="mt-4 font-bold text-[#98AFC7]" style="text-align: center;">
         Terimakasih telah berkunjung di website saya!
       </p>
 
-     
       <div id="timeBox" class="text-center mt-6 p-4 rounded-lg shadow-lg bg-gray-200 text-xl font-bold text-[#002a8d]">
         <p class="text-gray-700">Waktu Saat Ini:</p>
         <p id="realTime"></p>
@@ -118,7 +118,10 @@
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       // Animasi Bintang
-      const starContainer = document.querySelector(".stars-container");
+      const starContainer = document.createElement("div");
+      starContainer.classList.add("stars-container");
+      document.body.appendChild(starContainer);
+
       function createStar() {
         const star = document.createElement("div");
         star.classList.add("star");
@@ -170,7 +173,6 @@
 
         timeBox.innerHTML = `${dayName}, ${date}/${month}/${year} - ${hours}:${minutes}:${seconds}`;
       }
-
       setInterval(updateTime, 1000);
       updateTime();
     });
