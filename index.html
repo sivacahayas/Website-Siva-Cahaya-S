@@ -7,21 +7,17 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
     <script>
-        window.onload = function() {
-            alert("Welcome to Perpustakaan Siva Cahaya Suhailah");
-        };
+        window.onload = () => alert("Welcome to Perpustakaan Siva Cahaya Suhailah");
     </script>
     <style>
         body {
             overflow-x: hidden;
             margin: 0;
             padding: 0;
-            position: relative;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
-
         .stars-container {
             position: fixed;
             top: 0;
@@ -31,65 +27,32 @@
             z-index: -1;
             pointer-events: none;
         }
-
         .star {
             position: absolute;
             background-color: white;
-            width: 5px;
-            height: 5px;
             border-radius: 50%;
             opacity: 0.8;
             animation: fall linear infinite, twinkle 2s infinite alternate;
         }
-
         @keyframes fall {
             from { transform: translateY(-10px); }
             to { transform: translateY(100vh); }
         }
-
         @keyframes twinkle {
             0% { opacity: 0.3; }
             50% { opacity: 1; }
             100% { opacity: 0.3; }
         }
-
-        main {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        footer {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            background: #008080;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-        }
-
         .dark-mode {
             background-color: #1a202c;
             color: white;
         }
-
-        .dark-mode main {
+        .dark-mode header, .dark-mode main {
             background-color: #2d3748;
         }
-
-        .dark-mode header {
-            background-color: #4a5568;
-        }
-
         .dark-mode footer {
             background-color: #2c7a7b;
         }
-
         .dark-mode a {
             color: #90cdf4;
         }
@@ -100,7 +63,7 @@
 
     <header class="flex justify-between items-center bg-[#98AFC7] text-white p-4">
         <h1 class="text-xl font-bold">Perpustakaan Siva Cahaya Suhailah</h1>
-        <nav class="flex flex-row gap-4">
+        <nav class="flex gap-4">
             <a href="index.html" class="text-white hover:underline">Home</a>
             <a href="about.html" class="text-white hover:underline">About Me</a>
             <a href="contact-us.html" class="text-white hover:underline">Contact Us</a>
@@ -113,19 +76,11 @@
             <h2 class="text-2xl font-bold text-[#98AFC7] text-center mb-4">
                 Halo! Selamat Datang di Perpustakaan Siva Cahaya Suhailah!
             </h2>
-            <p class="mt-4 text-center">
-                Selamat datang di halaman website saya! Terimakasih telah mengunjungi halaman website saya. 
-                Website ini berisi repository pribadi saya yang akan memuat beberapa tugas saya selama satu semester dalam memenuhi mata kuliah Pengembangan Web.
-            </p>
-            <p class="mt-4 leading-relaxed text-justify">
-                Website ini juga melakukan kolaborasi dengan perpustakaan lain yaitu 
+            <p class="text-center">Website ini berisi repository pribadi untuk tugas satu semester.</p>
+            <p class="text-center">Kolaborasi dengan 
                 <a href="https://library.usu.ac.id/" target="_blank" class="text-blue-700 underline font-bold" rel="noopener noreferrer">
                     Perpustakaan Universitas Sumatera Utara
-                </a>, yang menyediakan beberapa sumber daya informasi yang lebih lengkap. 
-                Saya berharap, dengan adanya website ini dapat membantu anda dalam menemukan informasi.
-            </p>
-            <p class="mt-4 font-bold text-[#98AFC7] text-center">
-                Terimakasih telah berkunjung di website saya!
+                </a>.
             </p>
 
             <!-- Waktu Real-Time -->
@@ -136,65 +91,66 @@
         </section>
     </main>
 
-    <footer>
+    <footer class="text-center p-4 bg-[#008080] text-white">
         <p>© 2025 Perpustakaan Siva Cahaya Suhailah.</p>
     </footer>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const container = document.querySelector(".stars-container");
+            const starContainer = document.querySelector(".stars-container");
             function createStar() {
                 const star = document.createElement("div");
                 star.classList.add("star");
-                star.style.left = Math.random() * window.innerWidth + "px";
-                star.style.animationDuration = 3 + Math.random() * 2 + "s";
-                star.style.width = star.style.height = Math.random() * 5 + 2 + "px";
-                container.appendChild(star);
-                setTimeout(() => { star.remove(); }, 5000);
+
+                const size = Math.random() * 10 + 5;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.left = `${Math.random() * window.innerWidth}px`;
+                star.style.animationDuration = `${Math.random() * 3 + 3}s`;
+
+                starContainer.appendChild(star);
+
+                setTimeout(() => star.remove(), 5000);
             }
-            setInterval(createStar, 200);
-        });
+            setInterval(createStar, 300);
 
-        const toggleButton = document.getElementById("toggle-mode");
-        const body = document.body;
-
-        if (localStorage.getItem("darkMode") === "enabled") {
-            body.classList.add("dark-mode");
-            toggleButton.textContent = "☀️";
-        }
-
-        toggleButton.addEventListener("click", function () {
-            body.classList.toggle("dark-mode");
-
-            if (body.classList.contains("dark-mode")) {
+            // Toggle Dark Mode
+            const toggleButton = document.getElementById("toggle-mode");
+            if (localStorage.getItem("darkMode") === "enabled") {
+                document.body.classList.add("dark-mode");
                 toggleButton.textContent = "☀️";
-                localStorage.setItem("darkMode", "enabled");
-            } else {
-                toggleButton.textContent = "🌙";
-                localStorage.setItem("darkMode", "disabled");
             }
+            toggleButton.addEventListener("click", function () {
+                document.body.classList.toggle("dark-mode");
+                if (document.body.classList.contains("dark-mode")) {
+                    toggleButton.textContent = "☀️";
+                    localStorage.setItem("darkMode", "enabled");
+                } else {
+                    toggleButton.textContent = "🌙";
+                    localStorage.setItem("darkMode", "disabled");
+                }
+            });
+
+            // Update Waktu Real-Time
+            function updateTime() {
+                const timeBox = document.getElementById("realTime");
+                if (!timeBox) return;
+
+                const days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+                const now = new Date();
+                const dayName = days[now.getDay()];
+                const date = now.getDate().toString().padStart(2, '0');
+                const month = (now.getMonth() + 1).toString().padStart(2, '0');
+                const year = now.getFullYear();
+                const hours = now.getHours().toString().padStart(2, '0');
+                const minutes = now.getMinutes().toString().padStart(2, '0');
+                const seconds = now.getSeconds().toString().padStart(2, '0');
+
+                timeBox.innerHTML = `${dayName}, ${date}/${month}/${year} - ${hours}:${minutes}:${seconds}`;
+            }
+            setInterval(updateTime, 1000);
+            updateTime();
         });
-
-        function updateTime() {
-            const timeBox = document.getElementById("realTime");
-            if (!timeBox) return;
-
-            const days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
-            const now = new Date();
-
-            const dayName = days[now.getDay()];
-            const date = now.getDate().toString().padStart(2, '0');
-            const month = (now.getMonth() + 1).toString().padStart(2, '0');
-            const year = now.getFullYear();
-            const hours = now.getHours().toString().padStart(2, '0');
-            const minutes = now.getMinutes().toString().padStart(2, '0');
-            const seconds = now.getSeconds().toString().padStart(2, '0');
-
-            timeBox.innerHTML = `${dayName}, ${date}/${month}/${year} - ${hours}:${minutes}:${seconds}`;
-        }
-
-        setInterval(updateTime, 1000);
-        updateTime();
     </script>
 </body>
 </html>
