@@ -1,60 +1,62 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-100 text-gray-900">
 
-    <header>
-    <header class="bg-[#98AFC7] text-white py-4">
-        <h1 class="text-3xl font-bold text-center">Contact Us</h1>
-        <nav class="mt-2 flex justify-center space-x-6">
-            <a href="index.html" class="hover:underline">Home</a>
-            <a href="about.html" class="hover:underline">About Me</a>
-            <a href="contact-us.html" class="hover:underline">Contact</a>
-        </nav>
-    </header>
+  <header class="fixed top-0 left-0 w-full bg-[#98AFC7] text-white h-20 flex flex-col justify-center z-10">
+    <h1 class="text-xl md:text-2xl font-bold text-center">Contact Us</h1>
+    <nav class="mt-1">
+      <ul class="flex justify-center space-x-6">
+        <li><a href="index.html" class="hover:underline">Home</a></li>
+        <li><a href="about.html" class="hover:underline">About Me</a></li>
+        <li><a href="contact-us.html" class="hover:underline">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <form>
-    <section class="max-w-3xl mx-auto bg-white shadow-md rounded-lg p-6 mt-6">
-        <h2 class="text-xl font-bold text-center mb-4 text-[#98AFC7]">Contact Us</h2>
-        <p class="text-center mb-4">
-            Jika anda memiliki pertanyaan, saran atau ingin berdiskusi lebih lanjut, silahkan isi formulir di bawah ini ya!
-        </p>
+  <main class="mt-20 max-w-3xl mx-auto bg-white shadow-md rounded-lg p-6">
+    <h2 class="text-xl font-bold text-center mb-4 text-[#98AFC7]">Contact Us</h2>
+    <p class="text-center mb-4">
+      Jika anda memiliki pertanyaan, saran atau ingin berdiskusi lebih lanjut, silahkan isi formulir di bawah ini ya!
+    </p>
 
-        <form action="https://example.com/submit-form" method="POST" class="space-y-4">
-            <div>
-                <label for="nama" class="block font-semibold">Nama:</label>
-                <input type="text" id="nama" name="nama" placeholder="Masukkan Nama kamu" required
-                       class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#98AFC7]">
-            </div>
+    <form action="https://example.com/submit-form" method="POST" class="space-y-4">
+      <div>
+        <label for="nama" class="block font-semibold">Nama:</label>
+        <input type="text" id="nama" name="nama" placeholder="Masukkan Nama kamu" required
+          class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#98AFC7]">
+      </div>
 
-            <div>
-                <label for="email" class="block font-semibold">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Masukkan Email kamu" required
-                       class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#98AFC7]">
-            </div>
+      <div>
+        <label for="email" class="block font-semibold">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Masukkan Email kamu" required
+          class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#98AFC7]">
+      </div>
 
-            <div>
-                <label for="phone" class="block font-semibold">Nomor Telepon:</label>
-                <input type="tel" id="phone" name="phone" placeholder="Masukkan nomor telepon kamu" required
-                       class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#98AFC7]">
-            </div>
+      <div>
+        <label for="phone" class="block font-semibold">Nomor Telepon:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Masukkan nomor telepon kamu" required
+          class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#98AFC7]">
+      </div>
 
-            <div>
-                <label for="pesan" class="block font-semibold">Pesan:</label>
-                <textarea id="pesan" name="pesan" placeholder="Masukkan Pesan kamu" required
-                          class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#98AFC7] h-32"></textarea>
-            </div>
+      <div>
+        <label for="pesan" class="block font-semibold">Pesan:</label>
+        <textarea id="pesan" name="pesan" placeholder="Masukkan Pesan kamu" required
+          class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#98AFC7] h-32"></textarea>
+      </div>
 
-            <button type="submit" class="w-full bg-[#98AFC7] text-white py-2 rounded-md hover:bg-[#7D94B5] transition">
-                Kirim
-            </button>
-        </form>
-    </section>
+      <button type="submit" class="w-full bg-[#98AFC7] text-white py-2 rounded-md hover:bg-[#7D94B5] transition">
+        Kirim
+      </button>
+    </form>
+  </main>
 
 </body>
 </html>
