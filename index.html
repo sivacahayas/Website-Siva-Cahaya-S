@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -22,7 +21,7 @@
             flex-direction: column;
             min-height: 100vh;
         }
-        
+
         .stars-container {
             position: fixed;
             top: 0;
@@ -106,7 +105,6 @@
             <a href="about.html" class="text-white hover:underline">About Me</a>
             <a href="contact-us.html" class="text-white hover:underline">Contact Us</a>
         </nav>
-        <!-- Tombol Mode Gelap/Terang -->
         <button id="toggle-mode" class="ml-4 px-4 py-2 bg-gray-600 text-white rounded">🌙</button>
     </header>
 
@@ -130,12 +128,10 @@
                 Terimakasih telah berkunjung di website saya!
             </p>
 
-            <div id="timeBox" class="text-center mt-6 p-4 rounded-lg shadow-lg bg-gray-200 text-xl font-bold text-[#002a8d]"></div>
-
             <!-- Waktu Real-Time -->
-            <div id="timeBox" class="text-center mt-6 p-4 rounded-lg shadow-lg bg-gray-200">
+            <div id="timeBox" class="text-center mt-6 p-4 rounded-lg shadow-lg bg-gray-200 text-xl font-bold text-[#002a8d]">
                 <p class="text-gray-700">Waktu Saat Ini:</p>
-                <p id="realTime" class="text-xl font-bold text-[#002a8d]"></p>
+                <p id="realTime"></p>
             </div>
         </section>
     </main>
@@ -180,26 +176,25 @@
         });
 
         function updateTime() {
-    const timeBox = document.getElementById("timeBox");
-    if (!timeBox) return; // Pastikan elemen ada sebelum update
+            const timeBox = document.getElementById("realTime");
+            if (!timeBox) return;
 
-    const days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
-    const now = new Date();
+            const days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+            const now = new Date();
 
-    const dayName = days[now.getDay()];
-    const date = now.getDate().toString().padStart(2, '0');
-    const month = (now.getMonth() + 1).toString().padStart(2, '0');
-    const year = now.getFullYear();
-    const hours = now.getHours().toString().padStart(2, '0');
-    const minutes = now.getMinutes().toString().padStart(2, '0');
-    const seconds = now.getSeconds().toString().padStart(2, '0');
+            const dayName = days[now.getDay()];
+            const date = now.getDate().toString().padStart(2, '0');
+            const month = (now.getMonth() + 1).toString().padStart(2, '0');
+            const year = now.getFullYear();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
 
-    timeBox.innerHTML = `
-        <p><strong>Hari:</strong> ${dayName}</p>
-        <p><strong>Pukul:</strong> ${hours}.${minutes}.${seconds}</p>
-    `;
-}
+            timeBox.innerHTML = `${dayName}, ${date}/${month}/${year} - ${hours}:${minutes}:${seconds}`;
+        }
 
+        setInterval(updateTime, 1000);
+        updateTime();
     </script>
 </body>
 </html>
