@@ -1,4 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const starContainer = document.createElement("div");
+    starContainer.classList.add("stars-container");
+    document.body.appendChild(starContainer);
+
     function createStar() {
         const star = document.createElement("div");
         star.classList.add("star");
@@ -6,13 +10,12 @@ document.addEventListener("DOMContentLoaded", function () {
         const size = Math.random() * 10 + 5;
         star.style.width = `${size}px`;
         star.style.height = `${size}px`;
-
         star.style.left = `${Math.random() * window.innerWidth}px`;
 
         const duration = Math.random() * 3 + 3;
         star.style.animationDuration = `${duration}s`;
 
-        document.body.appendChild(star);
+        starContainer.appendChild(star);
 
         setTimeout(() => {
             star.remove();
@@ -21,24 +24,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setInterval(createStar, 300);
 
+    // Toggle Dark Mode
     const toggleButton = document.getElementById("mode-toggle");
-    toggleButton.addEventListener("click", function () {
-        document.body.classList.toggle("dark-mode");
+    if (toggleButton) {
+        toggleButton.addEventListener("click", function () {
+            document.body.classList.toggle("dark-mode");
+            localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
+        });
 
-        if (document.body.classList.contains("dark-mode")) {
-            localStorage.setItem("theme", "dark");
-        } else {
-            localStorage.setItem("theme", "light");
+        if (localStorage.getItem("theme") === "dark") {
+            document.body.classList.add("dark-mode");
         }
-    });
-
-    if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark-mode");
     }
 
+    // Update Waktu
     function updateTime() {
         const timeBox = document.getElementById("timeBox");
-        if (!timeBox) return; // Pastikan elemen ada sebelum update
+        if (!timeBox) return;
 
         const days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
         const now = new Date();
@@ -51,9 +53,12 @@ document.addEventListener("DOMContentLoaded", function () {
         const minutes = now.getMinutes().toString().padStart(2, '0');
         const seconds = now.getSeconds().toString().padStart(2, '0');
 
-        timeBox.innerHTML = `${dayName}, ${date} ${month} ${year} pukul ${hours}.${minutes}.${seconds}`;
+        timeBox.innerHTML = `
+            <p><strong>Hari:</strong> ${dayName}</p>
+            <p><strong>Pukul:</strong> ${hours}.${minutes}.${seconds}</p>
+        `;
     }
 
     setInterval(updateTime, 1000);
-    updateTime(); 
+    updateTime();
 });
