@@ -1,6 +1,3 @@
-
-
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -8,7 +5,7 @@ body {
     text-align: center;
     background-color: #E6E6FA;
     color: #333;
-    padding-bottom: 60px; 
+    padding-bottom: 60px;
 }
 
 :root {
@@ -69,7 +66,7 @@ nav {
 }
 
 nav a {
-    color: white; 
+    color: white;
     text-decoration: none;
     padding: 10px 15px;
     font-weight: bold;
@@ -131,7 +128,7 @@ p {
     border-collapse: collapse;
 }
 
-.biodata-table th, 
+.biodata-table th,
 .biodata-table td {
     border: 1px solid black;
     padding: 10px;
@@ -170,7 +167,7 @@ form label {
     font-weight: bold;
 }
 
-form input, 
+form input,
 form textarea {
     width: calc(100% - 16px);
     padding: 8px;
@@ -180,7 +177,7 @@ form textarea {
     box-sizing: border-box;
 }
 
-.dark-mode form input, 
+.dark-mode form input,
 .dark-mode form textarea {
     background-color: #444;
     color: white;
@@ -213,11 +210,11 @@ form button:hover {
 
 footer {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
-    position: relative; 
+    position: relative;
     width: 100%;
-    height: 50px; 
+    height: 50px;
     background-color: var(--main-color);
     color: white;
     font-weight: bold;
@@ -260,537 +257,7 @@ footer {
     z-index: 999;
     pointer-events: none;
     border-radius: 50%;
-    background-color: #FFD700;
-    animation: falling-star 5s linear infinite;
-}
-
-#timeBox {
-    background-color: 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    background-color: #E6E6FA;
-    color: #333;
-    padding-bottom: 60px; 
-}
-
-:root {
-    --main-color: #98AFC7;
-    --hover-color: var(--main-color);
-    --text-color: white;
-}
-
-.dark-mode {
-    background-color: #222;
-    color: white;
-}
-
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--main-color);
-    color: white;
-    padding: 15px 20px;
-    height: 60px;
-}
-
-.dark-mode header {
-    background-color: #444;
-}
-
-h1, h2 {
-    margin: 0;
-    padding: 0;
-}
-
-h1 {
-    font-size: 32px;
-    font-weight: bold;
-    color: white;
-    flex-grow: 1;
-    text-align: center;
-    line-height: 60px;
-}
-
-h2 {
-    font-size: 24px;
-    margin-top: 10px;
-    color: #002a8d;
-    text-align: left;
-}
-
-nav {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
-nav a {
-    color: white; 
-    text-decoration: none;
-    padding: 10px 15px;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: 0.3s;
-}
-
-nav a:hover, .active {
-    background-color: var(--text-color);
-    color: #98AFC7;
-    text-decoration: underline;
-}
-
-.dark-mode nav a {
-    color: white;
-}
-
-main {
-    padding-top: 80px;
-    margin-top: 80px;
-}
-
-.container {
-    margin-top: 0;
-    padding-top: 0;
-}
-
-p {
-    text-align: justify;
-    max-width: 800px;
-    margin: auto;
-    line-height: 1.6;
-}
-
-.bold-text {
-    font-weight: bold;
-}
-
-.intro h2 {
-    color: #002a8d;
-    max-width: 800px;
-    margin: auto;
-    text-align: left;
-}
-
-.intro a {
-    color: #002a8d;
-    text-decoration: none;
-}
-
-.intro a:hover {
-    text-decoration: underline;
-}
-
-.biodata-table {
-    width: 100%;
-    max-width: 800px;
-    margin: 20px auto;
-    border-collapse: collapse;
-}
-
-.biodata-table th, 
-.biodata-table td {
-    border: 1px solid black;
-    padding: 10px;
-}
-
-.biodata-table th {
-    background-color: #98AFC7;
-    color: white;
-    text-align: center;
-}
-
-.biodata-table td {
-    background-color: white;
-    color: black;
-}
-
-.dark-mode .biodata-table th {
-    background-color: #555;
-}
-
-.dark-mode .biodata-table td {
-    background-color: #333;
-    color: white;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
-    margin: auto;
-    text-align: left;
-}
-
-form label {
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-form input, 
-form textarea {
-    width: calc(100% - 16px);
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-.dark-mode form input, 
-.dark-mode form textarea {
-    background-color: #444;
-    color: white;
-    border: 1px solid #888;
-}
-
-form button {
-    margin-top: 15px;
-    background-color: #98AFC7;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-form button:hover {
-    background-color: var(--hover-color);
-}
-
-.dark-mode button {
-    background-color: #ccc;
-    color: black;
-}
-
-.dark-mode button:hover {
-    background-color: #bbb;
-}
-
-footer {
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    position: relative; 
-    width: 100%;
-    height: 50px; 
-    background-color: var(--main-color);
-    color: white;
-    font-weight: bold;
-}
-
-#toggle-mode {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    background-color: #98AFC7;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-#toggle-mode:hover {
-    background-color: #789;
-}
-
-@keyframes falling-star {
-    from {
-        transform: translateY(-100px) rotate(0deg);
-        opacity: 1;
-    }
-    to {
-        transform: translateY(100vh) rotate(360deg);
-        opacity: 0;
-    }
-}
-
-.star {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 999;
-    pointer-events: none;
-    border-radius: 50%;
-    background-color: #FFD700;
-    animation: falling-star 5s linear infinite;
-}
-
-#timeBox {
-    background-color: 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    background-color: #E6E6FA;
-    color: #333;
-    padding-bottom: 60px; 
-}
-
-:root {
-    --main-color: #98AFC7;
-    --hover-color: var(--main-color);
-    --text-color: white;
-}
-
-.dark-mode {
-    background-color: #222;
-    color: white;
-}
-
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--main-color);
-    color: white;
-    padding: 15px 20px;
-    height: 60px;
-}
-
-.dark-mode header {
-    background-color: #444;
-}
-
-h1, h2 {
-    margin: 0;
-    padding: 0;
-}
-
-h1 {
-    font-size: 32px;
-    font-weight: bold;
-    color: white;
-    flex-grow: 1;
-    text-align: center;
-    line-height: 60px;
-}
-
-h2 {
-    font-size: 24px;
-    margin-top: 10px;
-    color: #002a8d;
-    text-align: left;
-}
-
-nav {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
-nav a {
-    color: white; 
-    text-decoration: none;
-    padding: 10px 15px;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: 0.3s;
-}
-
-nav a:hover, .active {
-    background-color: var(--text-color);
-    color: #98AFC7;
-    text-decoration: underline;
-}
-
-.dark-mode nav a {
-    color: white;
-}
-
-main {
-    padding: 20px;
-    margin-top: 80px;
-}
-
-.container {
-    margin-top: 0;
-    padding-top: 0;
-}
-
-p {
-    text-align: justify;
-    max-width: 800px;
-    margin: auto;
-    line-height: 1.6;
-}
-
-.bold-text {
-    font-weight: bold;
-}
-
-.intro h2 {
-    color: #002a8d;
-    max-width: 800px;
-    margin: auto;
-    text-align: left;
-}
-
-.intro a {
-    color: #002a8d;
-    text-decoration: none;
-}
-
-.intro a:hover {
-    text-decoration: underline;
-}
-
-.biodata-table {
-    width: 100%;
-    max-width: 800px;
-    margin: 20px auto;
-    border-collapse: collapse;
-}
-
-.biodata-table th, 
-.biodata-table td {
-    border: 1px solid black;
-    padding: 10px;
-}
-
-.biodata-table th {
-    background-color: #98AFC7;
-    color: white;
-    text-align: center;
-}
-
-.biodata-table td {
-    background-color: white;
-    color: black;
-}
-
-.dark-mode .biodata-table th {
-    background-color: #555;
-}
-
-.dark-mode .biodata-table td {
-    background-color: #333;
-    color: white;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
-    margin: auto;
-    text-align: left;
-}
-
-form label {
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-form input, 
-form textarea {
-    width: calc(100% - 16px);
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-.dark-mode form input, 
-.dark-mode form textarea {
-    background-color: #444;
-    color: white;
-    border: 1px solid #888;
-}
-
-form button {
-    margin-top: 15px;
-    background-color: #98AFC7;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-form button:hover {
-    background-color: var(--hover-color);
-}
-
-.dark-mode button {
-    background-color: #ccc;
-    color: black;
-}
-
-.dark-mode button:hover {
-    background-color: #bbb;
-}
-
-footer {
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    position: relative; 
-    width: 100%;
-    height: 50px; 
-    background-color: var(--main-color);
-    color: white;
-    font-weight: bold;
-}
-
-#toggle-mode {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    background-color: #98AFC7;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-#toggle-mode:hover {
-    background-color: #789;
-}
-
-@keyframes falling-star {
-    from {
-        transform: translateY(-100px) rotate(0deg);
-        opacity: 1;
-    }
-    to {
-        transform: translateY(100vh) rotate(360deg);
-        opacity: 0;
-    }
-}
-
-.star {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 999;
-    pointer-events: none;
-    border-radius: 50%;
-    background-color: #FFE14C;
+    background-color: #FFE14C; 
     animation: falling-star 5s linear infinite;
 }
 
@@ -810,5 +277,4 @@ footer {
     background-color: #333;
     color: white;
     box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.2);
-
 }
