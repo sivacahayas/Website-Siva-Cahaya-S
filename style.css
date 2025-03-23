@@ -1,5 +1,6 @@
 
 
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -796,9 +797,9 @@ footer {
 #timeBox {
     background-color: white;
     color: #002a8d;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
-    padding: 10px 15px;
+    padding: 15px 20px;
     border-radius: 10px;
     display: inline-block;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
