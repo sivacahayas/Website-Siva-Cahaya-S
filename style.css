@@ -809,26 +809,5 @@ footer {
     background-color: #333;
     color: white;
     box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.2);
-}
 
-.dark-mode #timeBox {
-    background-color: #333;
-    color: white;
-    box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.2);
-}
-
-    color: #002a8d;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 10px 15px;
-    border-radius: 10px;
-    display: inline-block;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    margin-top: 20px;
-}
-
-.dark-mode #timeBox {
-    background-color: #333;
-    color: white;
-    box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.2);
 }
