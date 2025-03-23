@@ -790,7 +790,7 @@ footer {
     z-index: 999;
     pointer-events: none;
     border-radius: 50%;
-    background-color: #FFD700;
+    background-color: #FFE14C;
     animation: falling-star 5s linear infinite;
 }
 
