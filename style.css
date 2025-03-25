@@ -11,7 +11,7 @@ body {
 
 :root {
     --main-color: #98AFC7;
-    --hover-color: var(--main-color);
+    --hover-color: #6B8EAD;
     --text-color: white;
 }
 
@@ -30,8 +30,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: white;
-    padding: 15px 20px;
+    padding: 20px;
     height: 80px;
 }
 
@@ -39,22 +38,16 @@ header {
     background-color: #444;
 }
 
-h1, h2 {
-    margin: 0;
-    padding: 0;
-}
-
-h1 {
+header h1 {
     font-size: 32px;
     font-weight: bold;
     color: white;
+    flex-grow: 1;
     text-align: center;
     line-height: 60px;
-    flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
 }
 
 h2 {
@@ -70,6 +63,17 @@ nav {
     gap: 16px;
 }
 
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav li {
+    display: inline;
+}
+
 nav a {
     color: white;
     text-decoration: none;
@@ -81,7 +85,7 @@ nav a {
 
 nav a:hover, .active {
     background-color: var(--text-color);
-    color: #98AFC7;
+    color: var(--main-color);
     text-decoration: underline;
 }
 
@@ -89,11 +93,13 @@ nav a:hover, .active {
     color: white;
 }
 
+/* Main Content */
 main {
     padding: 20px;
-    margin-top: 80px;
+    margin-top: 100px; /* Memberikan ruang agar tidak tertutup header */
 }
 
+/* Paragraphs */
 p {
     text-align: justify;
     max-width: 800px;
@@ -101,6 +107,7 @@ p {
     line-height: 1.6;
 }
 
+/* Footer */
 footer {
     display: flex;
     justify-content: center;
@@ -117,7 +124,7 @@ footer {
     position: fixed;
     top: 10px;
     right: 10px;
-    background-color: #98AFC7;
+    background-color: var(--main-color);
     color: white;
     border: none;
     padding: 10px 15px;
