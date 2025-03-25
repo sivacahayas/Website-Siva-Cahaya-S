@@ -24,17 +24,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setInterval(createStar, 300);
 
-    // Toggle Dark Mode
-    const toggleButton = document.getElementById("mode-toggle");
-    if (toggleButton) {
-        toggleButton.addEventListener("click", function () {
-            document.body.classList.toggle("dark-mode");
-            localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
-        });
+    // Tambahin tombol dark mode di pojok kanan atas
+    const toggleButton = document.createElement("button");
+    toggleButton.id = "mode-toggle";
+    toggleButton.style.position = "fixed";
+    toggleButton.style.top = "10px";
+    toggleButton.style.right = "10px";
+    toggleButton.style.backgroundColor = "#007BFF";
+    toggleButton.style.color = "white";
+    toggleButton.style.border = "none";
+    toggleButton.style.padding = "10px 15px";
+    toggleButton.style.borderRadius = "5px";
+    toggleButton.style.cursor = "pointer";
+    toggleButton.style.fontSize = "18px";
+    toggleButton.textContent = "🌙"; // Default icon bulan
 
-        if (localStorage.getItem("theme") === "dark") {
-            document.body.classList.add("dark-mode");
-        }
+    document.body.appendChild(toggleButton);
+
+    // Toggle Dark Mode
+    toggleButton.addEventListener("click", function () {
+        document.body.classList.toggle("dark-mode");
+        const isDarkMode = document.body.classList.contains("dark-mode");
+        localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+
+        // Ganti icon tombol
+        toggleButton.textContent = isDarkMode ? "☀️" : "🌙";
+    });
+
+    // Cek mode terakhir yang disimpan di localStorage
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+        toggleButton.textContent = "☀️"; // Matahari kalau dark mode aktif
     }
 
     // Update Waktu
