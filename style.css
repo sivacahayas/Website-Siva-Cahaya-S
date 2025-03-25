@@ -48,9 +48,13 @@ h1 {
     font-size: 32px;
     font-weight: bold;
     color: white;
-    flex-grow: 1;
     text-align: center;
     line-height: 60px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 h2 {
