@@ -22,20 +22,31 @@ document.addEventListener("DOMContentLoaded", function () {
         }, duration * 1000);
     }
 
-    setInterval(createStar, 500); 
+    setInterval(createStar, 300);
+
+    // Ambil tombol mode yang udah ada di HTML
     const toggleButton = document.getElementById("toggle-mode");
-    if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark-mode");
-        toggleButton.textContent = "☀️"; 
+
+    if (!toggleButton) {
+        console.error("Tombol mode tidak ditemukan!");
+        return;
     }
 
+    // Cek mode terakhir dari localStorage
+    if (localStorage.getItem("darkMode") === "enabled") {
+        document.body.classList.add("dark-mode");
+        toggleButton.textContent = "☀️"; // Matahari kalau dark mode aktif
+    }
+
+    // Event listener buat toggle mode
     toggleButton.addEventListener("click", function () {
         document.body.classList.toggle("dark-mode");
         const isDarkMode = document.body.classList.contains("dark-mode");
-        localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+        localStorage.setItem("darkMode", isDarkMode ? "enabled" : "disabled");
         toggleButton.textContent = isDarkMode ? "☀️" : "🌙";
     });
 
+    // Update Waktu
     function updateTime() {
         const timeBox = document.getElementById("realTime");
         if (!timeBox) return;
