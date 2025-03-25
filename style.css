@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,17 +7,21 @@ body {
     background-color: #E6E6FA;
     color: #333;
     padding-bottom: 60px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 :root {
     --main-color: #98AFC7;
     --hover-color: #6B8EAD;
     --text-color: white;
+    --dark-bg: #222;
+    --dark-header: #444;
+    --dark-text: #fff;
 }
 
 .dark-mode {
-    background-color: #222;
-    color: white;
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
 }
 
 header {
@@ -31,10 +36,11 @@ header {
     align-items: center;
     padding: 20px;
     height: 80px;
+    transition: background-color 0.3s;
 }
 
 .dark-mode header {
-    background-color: #444;
+    background-color: var(--dark-header);
 }
 
 header h1 {
@@ -54,6 +60,10 @@ h2 {
     margin-top: 10px;
     color: #002a8d;
     text-align: center;
+}
+
+.dark-mode h2 {
+    color: #ffc107;
 }
 
 nav {
@@ -95,6 +105,7 @@ nav a:hover, .active {
     color: white;
 }
 
+/* Konten Utama */
 main {
     padding: 20px;
     margin-top: 100px;
@@ -107,6 +118,7 @@ p {
     line-height: 1.6;
 }
 
+/* Footer */
 footer {
     display: flex;
     justify-content: center;
@@ -117,6 +129,11 @@ footer {
     background-color: var(--main-color);
     color: white;
     font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.dark-mode footer {
+    background-color: var(--dark-header);
 }
 
 #toggle-mode {
@@ -130,10 +147,16 @@ footer {
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
+    font-size: 18px;
 }
 
 #toggle-mode:hover {
-    background-color: #789;
+    background-color: var(--hover-color);
+}
+
+.dark-mode #toggle-mode {
+    background-color: #ffc107;
+    color: black;
 }
 
 @keyframes falling-star {
@@ -160,6 +183,11 @@ footer {
     animation: falling-star 5s linear infinite;
 }
 
+.dark-mode .star {
+    background-color: #FFD700;
+    opacity: 0.8;
+}
+
 #timeBox {
     background-color: white;
     color: #002a8d;
@@ -170,6 +198,7 @@ footer {
     display: inline-block;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
     margin-top: 20px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .dark-mode #timeBox {
