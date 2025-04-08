@@ -1,98 +1,20 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Perpustakaan Siva Cahaya Suhailah</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css" />
-  
-  <script>
-    window.onload = function() {
-      alert("Welcome to Perpustakaan Siva Cahaya Suhailah");
-    };
-  </script>
-  
-  <style>
-    body {
-      overflow-x: hidden;
-      margin: 0;
-      padding: 0;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    .stars-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      z-index: -1;
-      pointer-events: none;
-    }
-    .star {
-      position: absolute;
-      background-color: #FFE14C;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      opacity: 0.8;
-      animation: fall linear infinite, twinkle 2s infinite alternate;
-    }
-    @keyframes fall {
-      from { transform: translateY(-10px); }
-      to { transform: translateY(100vh); }
-    }
-    @keyframes twinkle {
-      0% { opacity: 0.3; }
-      50% { opacity: 1; }
-      100% { opacity: 0.3; }
-    }
-
-    .dark-mode {
-      background-color: #1a202c;
-      color: white;
-    }
-    .dark-mode header {
-      background-color: #4a5568;
-    }
-    .dark-mode main {
-      background-color: #2d3748;
-    }
-    .dark-mode footer {
-      background-color: #2c7a7b;
-    }
-    .dark-mode a {
-      color: #90cdf4;
-    }
-
-    .koleksi-button {
-      display: inline-block;
-      padding: 12px 20px;
-      margin-top: 30px;
-      font-size: 18px;
-      color: white;
-      background-color: #98AFC7;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background-color 0.3s;
-    }
-
-    .koleksi-button:hover {
-      background-color: #6B8EAD;
-    }
-  </style>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
+<body class="bg-gray-100 text-gray-800">
 
-<body class="bg-gray-100">
-  <div class="stars-container"></div>
-
+  <!-- Header -->
   <header class="bg-[#98AFC7] text-white p-4">
     <div class="flex flex-col items-center">
-      <h1 class="text-xl font-bold mb-2">Perpustakaan Siva Cahaya Suhailah</h1>
-      <nav class="flex gap-4">
+      <h1 class="text-xl font-bold mb-2 text-center">
+        Perpustakaan Siva Cahaya Suhailah
+      </h1>
+      <nav class="flex gap-4 justify-center">
         <a href="index.html" class="text-white hover:underline">Home</a>
         <a href="about.html" class="text-white hover:underline">About Me</a>
         <a href="contact-us.html" class="text-white hover:underline">Contact Us</a>
@@ -101,101 +23,39 @@
     </div>
   </header>
 
-  <main class="p-6 max-w-3xl mx-auto bg-white shadow-md rounded-lg mt-6">
-    <section>
-      <h2 class="text-2xl font-bold text-[#98AFC7] text-center mb-4">
-        Halo! Selamat Datang di Perpustakaan Siva Cahaya Suhailah!
-      </h2>
-      
-      <p class="mt-4 text-justify">
-        Selamat datang di halaman website saya! Terimakasih telah mengunjungi halaman website saya.
-        Website ini berisi repository pribadi saya yang akan memuat beberapa tugas saya selama satu semester
-        dalam memenuhi mata kuliah Pengembangan Web.
-      </p>
-      
-      <p class="mt-4 text-justify">
-        Website ini juga melakukan kolaborasi dengan perpustakaan lain yaitu
-        <a href="https://library.usu.ac.id/" target="_blank" class="text-blue-700 underline font-bold" rel="noopener noreferrer">
-          Perpustakaan Universitas Sumatera Utara
-        </a>,
-        yang menyediakan beberapa sumber daya informasi yang lebih lengkap.
-        Saya berharap, dengan adanya website ini dapat membantu anda dalam menemukan informasi.
-      </p>
-      
-      <p class="mt-4 font-bold text-[#98AFC7] text-center">
-        Terimakasih telah berkunjung di website saya!
-      </p>
+  <!-- Main Content -->
+  <main class="max-w-3xl mx-auto p-6 bg-white mt-8 rounded shadow">
+    <p>Selamat datang di halaman website saya! Terimakasih telah mengunjungi halaman website saya. Website ini berisi repository pribadi saya yang akan memuat beberapa tugas saya selama satu semester dalam memenuhi mata kuliah Pengembangan Web.</p>
 
-      <div class="text-center mt-6">
-        <a href="koleksi.html" class="koleksi-button">Lihat Koleksi Buku Digital</a>
-      </div>
+    <p class="mt-4">
+      Website ini juga melakukan kolaborasi dengan perpustakaan lain yaitu 
+      <a href="https://www.usu.ac.id/" class="text-blue-600 font-semibold underline" target="_blank">
+        Perpustakaan Universitas Sumatera Utara
+      </a>, yang menyediakan beberapa sumber daya informasi yang lebih lengkap. Saya berharap, dengan adanya website ini dapat membantu anda dalam menemukan informasi.
+    </p>
 
-      <div id="timeBox" class="text-center mt-6 p-4 rounded-lg shadow-lg bg-gray-200 text-xl font-bold text-[#002a8d]">
-        <p class="text-gray-700">Waktu Saat Ini:</p>
-        <p id="realTime"></p>
-      </div>
+    <p class="mt-4 text-blue-400 font-semibold text-center">
+      Terimakasih telah berkunjung di website saya!
+    </p>
 
-      <div class="text-center mt-4">
-        <button id="toggle-mode" class="px-4 py-2 bg-gray-600 text-white rounded">🌙</button>
+    <div class="mt-6 flex justify-center">
+      <a href="koleksi.html" class="bg-[#98AFC7] text-white py-2 px-4 rounded hover:bg-[#7d99b8]">
+        Lihat Koleksi Buku Digital
+      </a>
+    </div>
+
+    <div class="mt-6 text-center">
+      <div class="inline-block p-4 bg-white rounded shadow">
+        <p class="font-bold text-gray-700">Waktu Saat Ini:</p>
+        <p class="text-blue-700 font-bold">Selasa, 08/04/2025, 17.40.07</p>
       </div>
-    </section>
+    </div>
   </main>
-  
-  <footer class="text-center p-4 bg-[#98AFC7] text-white mt-auto">
-    <p>© 2025 Website Perpustakaan Siva Cahaya Suhailah.</p>
+
+  <!-- Footer -->
+  <footer class="bg-[#98AFC7] text-white text-center p-4 mt-8">
+    © 2025 Website Perpustakaan Siva Cahaya Suhailah.
   </footer>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const starContainer = document.createElement("div");
-      starContainer.classList.add("stars-container");
-      document.body.appendChild(starContainer);
-
-      function createStar() {
-        const star = document.createElement("div");
-        star.classList.add("star");
-        star.style.width = `${Math.random() * 10 + 5}px`;
-        star.style.height = star.style.width;
-        star.style.left = `${Math.random() * window.innerWidth}px`;
-        star.style.animationDuration = `${Math.random() * 3 + 3}s`;
-        starContainer.appendChild(star);
-        setTimeout(() => star.remove(), 5000);
-      }
-      setInterval(createStar, 300);
-
-      const toggleButton = document.getElementById("toggle-mode");
-
-      function updateTheme() {
-        const isDarkMode = localStorage.getItem("darkMode") === "enabled";
-        document.body.classList.toggle("dark-mode", isDarkMode);
-        toggleButton.textContent = isDarkMode ? "☀️" : "🌙";
-      }
-
-      toggleButton.addEventListener("click", function () {
-        const isDarkMode = document.body.classList.toggle("dark-mode");
-        localStorage.setItem("darkMode", isDarkMode ? "enabled" : "disabled");
-        updateTheme();
-      });
-
-      updateTheme();
-
-      function updateTime() {
-        const timeBox = document.getElementById("realTime");
-        if (!timeBox) return;
-        const now = new Date();
-        timeBox.innerHTML = now.toLocaleString("id-ID", { 
-          weekday: "long", 
-          day: "2-digit", 
-          month: "2-digit", 
-          year: "numeric", 
-          hour: "2-digit", 
-          minute: "2-digit", 
-          second: "2-digit" 
-        });
-      }
-      setInterval(updateTime, 1000);
-      updateTime();
-    });
-  </script>
 </body>
 </html>
