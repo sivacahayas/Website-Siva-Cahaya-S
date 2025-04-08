@@ -1,61 +1,72 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Perpustakaan Siva Cahaya Suhailah</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 text-gray-800">
 
-  <!-- Header -->
-  <header class="bg-[#98AFC7] text-white p-4">
-    <div class="flex flex-col items-center">
-      <h1 class="text-xl font-bold mb-2 text-center">
-        Perpustakaan Siva Cahaya Suhailah
-      </h1>
-      <nav class="flex gap-4 justify-center">
-        <a href="index.html" class="text-white hover:underline">Home</a>
-        <a href="about.html" class="text-white hover:underline">About Me</a>
-        <a href="contact-us.html" class="text-white hover:underline">Contact Us</a>
-        <a href="koleksi.html" class="text-white hover:underline">Koleksi Digital</a>
-      </nav>
+  <!-- HEADER -->
+  <header class="bg-blue-300 py-4 shadow-md">
+    <div class="text-center text-white font-bold text-2xl">
+      Perpustakaan Siva Cahaya Suhailah
     </div>
+    <nav class="mt-2 flex justify-center space-x-6 font-semibold text-white">
+      <a href="#" class="hover:underline">Home</a>
+      <a href="#" class="hover:underline">About Me</a>
+      <a href="#" class="hover:underline">Contact Us</a>
+      <a href="#" class="hover:underline">Koleksi Digital</a>
+    </nav>
   </header>
 
-  <!-- Main Content -->
-  <main class="max-w-3xl mx-auto p-6 bg-white mt-8 rounded shadow">
-    <p>Selamat datang di halaman website saya! Terimakasih telah mengunjungi halaman website saya. Website ini berisi repository pribadi saya yang akan memuat beberapa tugas saya selama satu semester dalam memenuhi mata kuliah Pengembangan Web.</p>
-
-    <p class="mt-4">
-      Website ini juga melakukan kolaborasi dengan perpustakaan lain yaitu 
-      <a href="https://www.usu.ac.id/" class="text-blue-600 font-semibold underline" target="_blank">
-        Perpustakaan Universitas Sumatera Utara
-      </a>, yang menyediakan beberapa sumber daya informasi yang lebih lengkap. Saya berharap, dengan adanya website ini dapat membantu anda dalam menemukan informasi.
+  <!-- MAIN CONTENT -->
+  <main class="max-w-2xl mx-auto mt-10 p-6 bg-white shadow-md rounded-lg text-center">
+    <p class="mb-4 text-justify">
+      Selamat datang di halaman website saya! Terimakasih telah mengunjungi halaman website saya.
+      Website ini berisi repository pribadi saya yang akan memuat beberapa tugas saya selama satu semester dalam memenuhi mata kuliah Pengembangan Web.
     </p>
-
-    <p class="mt-4 text-blue-400 font-semibold text-center">
+    <p class="mb-4 text-justify">
+      Website ini juga melakukan kolaborasi dengan perpustakaan lain yaitu
+      <a href="https://www.usu.ac.id/" class="text-blue-600 font-semibold hover:underline" target="_blank">
+        Perpustakaan Universitas Sumatera Utara
+      </a>, yang menyediakan beberapa sumber daya informasi yang lebih lengkap.
+      Saya berharap, dengan adanya website ini dapat membantu anda dalam menemukan informasi.
+    </p>
+    <p class="text-blue-500 font-semibold mb-6">
       Terimakasih telah berkunjung di website saya!
     </p>
 
-    <div class="mt-6 flex justify-center">
-      <a href="koleksi.html" class="bg-[#98AFC7] text-white py-2 px-4 rounded hover:bg-[#7d99b8]">
-        Lihat Koleksi Buku Digital
-      </a>
-    </div>
+    <!-- TOMBOL -->
+    <a href="#" class="bg-blue-300 hover:bg-blue-400 text-white font-bold py-2 px-4 rounded transition">
+      Lihat Koleksi Buku Digital
+    </a>
 
-    <div class="mt-6 text-center">
-      <div class="inline-block p-4 bg-white rounded shadow">
-        <p class="font-bold text-gray-700">Waktu Saat Ini:</p>
-        <p class="text-blue-700 font-bold">Selasa, 08/04/2025, 17.40.07</p>
-      </div>
+    <!-- JAM -->
+    <div class="mt-6 bg-white p-4 rounded-lg shadow text-center inline-block">
+      <h2 class="font-bold text-lg">Waktu Saat Ini:</h2>
+      <p id="clock" class="text-blue-700 font-bold text-xl mt-2"></p>
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-[#98AFC7] text-white text-center p-4 mt-8">
+  <!-- FOOTER -->
+  <footer class="mt-10 bg-blue-300 text-white text-center py-4 font-semibold">
     © 2025 Website Perpustakaan Siva Cahaya Suhailah.
   </footer>
+
+  <!-- SCRIPT JAM -->
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const options = { weekday: 'long', day: '2-digit', month: '2-digit', year: 'numeric' };
+      const date = now.toLocaleDateString('id-ID', options);
+      const time = now.toLocaleTimeString('id-ID');
+      document.getElementById('clock').innerText = `${date}, ${time}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
 
 </body>
 </html>
