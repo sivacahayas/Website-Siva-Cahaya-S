@@ -4,156 +4,190 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Perpustakaan Siva Cahaya Suhailah</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+  
+  <script>
+    window.onload = function() {
+      alert("Welcome to Perpustakaan Siva Cahaya Suhailah");
+    };
+  </script>
+  
   <style>
     body {
-      font-family: Arial, sans-serif;
+      overflow-x: hidden;
       margin: 0;
-      background-color: #f4f4f4;
-      transition: background-color 0.3s, color 0.3s;
-    }
-    header {
-      background-color: #9db4d3;
-      color: white;
-      padding: 20px 10px 10px;
-      text-align: center;
+      padding: 0;
       position: relative;
-    }
-    nav {
       display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 10px;
+      flex-direction: column;
+      min-height: 100vh;
     }
-    nav a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-    }
-    .dark-mode {
-      background-color: #121212;
-      color: white;
-    }
-    .dark-mode header {
-      background-color: #1e1e1e;
-    }
-    .dark-mode nav a {
-      color: #ddd;
-    }
-    #dark-mode-toggle {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      cursor: pointer;
-      font-size: 20px;
-    }
-    .container {
-      max-width: 800px;
-      margin: 40px auto;
-      background: white;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    footer {
-      text-align: center;
-      background-color: #9db4d3;
-      color: white;
-      padding: 15px 0;
-      margin-top: 50px;
-    }
-    #clock {
-      background: #fff;
-      padding: 15px;
-      border-radius: 10px;
-      text-align: center;
-      margin-top: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .dark-mode #clock {
-      background-color: #1e1e1e;
-      color: #ddd;
-    }
-    #particles-js {
+    .stars-container {
       position: fixed;
       top: 0;
       left: 0;
-      height: 100%;
       width: 100%;
+      height: 100vh;
       z-index: -1;
+      pointer-events: none;
+    }
+    .star {
+      position: absolute;
+      background-color: #FFE14C;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: fall linear infinite, twinkle 2s infinite alternate;
+    }
+    @keyframes fall {
+      from { transform: translateY(-10px); }
+      to { transform: translateY(100vh); }
+    }
+    @keyframes twinkle {
+      0% { opacity: 0.3; }
+      50% { opacity: 1; }
+      100% { opacity: 0.3; }
+    }
+
+    .dark-mode {
+      background-color: #1a202c;
+      color: white;
+    }
+    .dark-mode header {
+      background-color: #4a5568;
+    }
+    .dark-mode main {
+      background-color: #2d3748;
+    }
+    .dark-mode footer {
+      background-color: #2c7a7b;
+    }
+    .dark-mode a {
+      color: #90cdf4;
+    }
+
+    .koleksi-button {
+      display: inline-block;
+      padding: 12px 20px;
+      font-size: 16px;
+      color: white;
+      background-color: #98AFC7;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    .koleksi-button:hover {
+      background-color: #6B8EAD;
     }
   </style>
 </head>
-<body>
-  <div id="particles-js"></div>
 
-  <header>
-    <h1>Perpustakaan Siva Cahaya Suhailah</h1>
-    <div id="dark-mode-toggle">🌙</div>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">About Me</a>
-      <a href="#">Contact Us</a>
-      <a href="#">Koleksi Digital</a>
+<body class="bg-gray-100">
+  <div class="stars-container"></div>
+  <header class="flex flex-col sm:flex-row justify-between items-center bg-[#98AFC7] text-white p-4 gap-4">
+    <h1 class="text-xl font-bold text-center sm:text-left">Perpustakaan Siva Cahaya Suhailah</h1>
+    <nav class="flex flex-col sm:flex-row items-center gap-4">
+      <a href="index.html" class="text-white hover:underline">Home</a>
+      <a href="about.html" class="text-white hover:underline">About Me</a>
+      <a href="contact-us.html" class="text-white hover:underline">Contact Us</a>
+      <a href="koleksi.html" class="koleksi-button ml-0 sm:ml-4">Koleksi Digital</a>
     </nav>
   </header>
 
-  <div class="container">
-    <p>Selamat datang di halaman website saya! Terimakasih telah mengunjungi halaman website saya. Website ini berisi repository pribadi saya yang akan memuat beberapa tugas saya selama satu semester dalam memenuhi mata kuliah Pengembangan Web.</p>
+  <main class="p-6 max-w-3xl mx-auto bg-white shadow-md rounded-lg mt-6">
+    <section>
+      <h2 class="text-2xl font-bold text-[#98AFC7] text-center mb-4">
+        Halo! Selamat Datang di Perpustakaan Siva Cahaya Suhailah!
+      </h2>
+      
+      <p class="mt-4 text-justify">
+        Selamat datang di halaman website saya! Terimakasih telah mengunjungi halaman website saya.
+        Website ini berisi repository pribadi saya yang akan memuat beberapa tugas saya selama satu semester
+        dalam memenuhi mata kuliah Pengembangan Web.
+      </p>
+      
+      <p class="mt-4 text-justify">
+        Website ini juga melakukan kolaborasi dengan perpustakaan lain yaitu
+        <a href="https://library.usu.ac.id/" target="_blank" class="text-blue-700 underline font-bold" rel="noopener noreferrer">
+          Perpustakaan Universitas Sumatera Utara
+        </a>,
+        yang menyediakan beberapa sumber daya informasi yang lebih lengkap.
+        Saya berharap, dengan adanya website ini dapat membantu anda dalam menemukan informasi.
+      </p>
+      
+      <p class="mt-4 font-bold text-[#98AFC7] text-center">
+        Terimakasih telah berkunjung di website saya!
+      </p>
 
-    <p>Website ini juga melakukan kolaborasi dengan perpustakaan lain yaitu <a href="https://www.usu.ac.id" target="_blank"><strong>Perpustakaan Universitas Sumatera Utara</strong></a>, yang menyediakan beberapa sumber daya informasi yang lebih lengkap. Saya berharap, dengan adanya website ini dapat membantu anda dalam menemukan informasi.</p>
+      <div id="timeBox" class="text-center mt-6 p-4 rounded-lg shadow-lg bg-gray-200 text-xl font-bold text-[#002a8d]">
+        <p class="text-gray-700">Waktu Saat Ini:</p>
+        <p id="realTime"></p>
+      </div>
 
-    <p style="text-align: center; color: #7a9bd3;"><strong>Terimakasih telah berkunjung di website saya!</strong></p>
-
-    <div id="clock">
-      <h3>Waktu Saat Ini:</h3>
-      <p id="time" style="font-weight:bold; color:#004aad;"></p>
-    </div>
-  </div>
-
-  <footer>
-    &copy; 2025 Website Perpustakaan Siva Cahaya Suhailah.
+      <div class="text-center mt-4">
+        <button id="toggle-mode" class="px-4 py-2 bg-gray-600 text-white rounded">🌙</button>
+      </div>
+    </section>
+  </main>
+  
+  <footer class="text-center p-4 bg-[#98AFC7] text-white mt-auto">
+    <p>© 2025 Website Perpustakaan Siva Cahaya Suhailah.</p>
   </footer>
 
-  <!-- Particles.js -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
-    particlesJS("particles-js", {
-      particles: {
-        number: { value: 30 },
-        size: { value: 5 },
-        color: { value: "#fdd835" },
-        move: { speed: 1 },
-        line_linked: { enable: false }
+    document.addEventListener("DOMContentLoaded", function () {
+      const starContainer = document.createElement("div");
+      starContainer.classList.add("stars-container");
+      document.body.appendChild(starContainer);
+
+      function createStar() {
+        const star = document.createElement("div");
+        star.classList.add("star");
+        star.style.width = `${Math.random() * 10 + 5}px`;
+        star.style.height = star.style.width;
+        star.style.left = `${Math.random() * window.innerWidth}px`;
+        star.style.animationDuration = `${Math.random() * 3 + 3}s`;
+        starContainer.appendChild(star);
+        setTimeout(() => star.remove(), 5000);
       }
+      setInterval(createStar, 300);
+
+      const toggleButton = document.getElementById("toggle-mode");
+
+      function updateTheme() {
+        const isDarkMode = localStorage.getItem("darkMode") === "enabled";
+        document.body.classList.toggle("dark-mode", isDarkMode);
+        toggleButton.textContent = isDarkMode ? "☀️" : "🌙";
+      }
+
+      toggleButton.addEventListener("click", function () {
+        const isDarkMode = document.body.classList.toggle("dark-mode");
+        localStorage.setItem("darkMode", isDarkMode ? "enabled" : "disabled");
+        updateTheme();
+      });
+
+      updateTheme();
+
+      function updateTime() {
+        const timeBox = document.getElementById("realTime");
+        if (!timeBox) return;
+        const now = new Date();
+        timeBox.innerHTML = now.toLocaleString("id-ID", { 
+          weekday: "long", 
+          day: "2-digit", 
+          month: "2-digit", 
+          year: "numeric", 
+          hour: "2-digit", 
+          minute: "2-digit", 
+          second: "2-digit" 
+        });
+      }
+      setInterval(updateTime, 1000);
+      updateTime();
     });
-  </script>
-
-  <!-- Dark Mode -->
-  <script>
-    const toggle = document.getElementById("dark-mode-toggle");
-    toggle.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
-      toggle.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
-    });
-  </script>
-
-  <!-- Clock -->
-  <script>
-    function updateClock() {
-      const now = new Date();
-      const hari = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
-      const tgl = now.getDate().toString().padStart(2, '0');
-      const bln = (now.getMonth()+1).toString().padStart(2, '0');
-      const thn = now.getFullYear();
-      const jam = now.getHours().toString().padStart(2, '0');
-      const menit = now.getMinutes().toString().padStart(2, '0');
-      const detik = now.getSeconds().toString().padStart(2, '0');
-
-      document.getElementById("time").textContent =
-        `${hari[now.getDay()]}, ${tgl}/${bln}/${thn}, ${jam}.${menit}.${detik}`;
-    }
-    setInterval(updateClock, 1000);
-    updateClock();
   </script>
 </body>
 </html>
