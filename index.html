@@ -68,12 +68,10 @@
       color: #90cdf4;
     }
 
-    /* Tambahan tombol koleksi */
     .koleksi-button {
       display: inline-block;
       padding: 12px 20px;
-      margin-top: 30px;
-      font-size: 18px;
+      font-size: 16px;
       color: white;
       background-color: #98AFC7;
       text-decoration: none;
@@ -89,12 +87,13 @@
 
 <body class="bg-gray-100">
   <div class="stars-container"></div>
-  <header class="flex flex-col items-center bg-[#98AFC7] text-white p-4">
-    <h1 class="text-xl font-bold">Perpustakaan Siva Cahaya Suhailah</h1>
-    <nav class="flex flex-col sm:flex-row gap-4">
+  <header class="flex flex-col sm:flex-row justify-between items-center bg-[#98AFC7] text-white p-4 gap-4">
+    <h1 class="text-xl font-bold text-center sm:text-left">Perpustakaan Siva Cahaya Suhailah</h1>
+    <nav class="flex flex-col sm:flex-row items-center gap-4">
       <a href="index.html" class="text-white hover:underline">Home</a>
       <a href="about.html" class="text-white hover:underline">About Me</a>
       <a href="contact-us.html" class="text-white hover:underline">Contact Us</a>
+      <a href="koleksi.html" class="koleksi-button ml-0 sm:ml-4">Koleksi Digital</a>
     </nav>
   </header>
 
@@ -122,11 +121,6 @@
       <p class="mt-4 font-bold text-[#98AFC7] text-center">
         Terimakasih telah berkunjung di website saya!
       </p>
-
-      <!-- 🔗 Tombol menuju koleksi -->
-      <div class="text-center mt-6">
-        <a href="koleksi.html" class="koleksi-button">Lihat Koleksi Buku Digital</a>
-      </div>
 
       <div id="timeBox" class="text-center mt-6 p-4 rounded-lg shadow-lg bg-gray-200 text-xl font-bold text-[#002a8d]">
         <p class="text-gray-700">Waktu Saat Ini:</p>
