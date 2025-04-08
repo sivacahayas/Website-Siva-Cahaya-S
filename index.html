@@ -4,189 +4,212 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Perpustakaan Siva Cahaya Suhailah</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css" />
-  
-  <script>
-    window.onload = function() {
-      alert("Welcome to Perpustakaan Siva Cahaya Suhailah");
-    };
-  </script>
-  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
   <style>
     body {
-      overflow-x: hidden;
       margin: 0;
-      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f5f5f5;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    header {
+      background-color: #9db4d3;
+      padding: 20px 10px 10px;
+      text-align: center;
       position: relative;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
     }
-    .stars-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      z-index: -1;
-      pointer-events: none;
+
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+      color: white;
     }
-    .star {
-      position: absolute;
-      background-color: #FFE14C;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      opacity: 0.8;
-      animation: fall linear infinite, twinkle 2s infinite alternate;
+
+    nav {
+      margin-top: 10px;
     }
-    @keyframes fall {
-      from { transform: translateY(-10px); }
-      to { transform: translateY(100vh); }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      color: white;
+      transition: color 0.3s;
     }
-    @keyframes twinkle {
-      0% { opacity: 0.3; }
-      50% { opacity: 1; }
-      100% { opacity: 0.3; }
+
+    nav a:hover {
+      color: #fdd835;
     }
 
     .dark-mode {
-      background-color: #1a202c;
-      color: white;
+      background-color: #121212;
+      color: #e0e0e0;
     }
+
     .dark-mode header {
-      background-color: #4a5568;
-    }
-    .dark-mode main {
-      background-color: #2d3748;
-    }
-    .dark-mode footer {
-      background-color: #2c7a7b;
-    }
-    .dark-mode a {
-      color: #90cdf4;
+      background-color: #333;
     }
 
-    .koleksi-button {
-      display: inline-block;
-      padding: 12px 20px;
-      font-size: 16px;
-      color: white;
-      background-color: #98AFC7;
-      text-decoration: none;
+    .dark-mode nav a {
+      color: #e0e0e0;
+    }
+
+    .dark-mode nav a:hover {
+      color: #fdd835;
+    }
+
+    .toggle-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+      background-color: transparent;
+      border: 2px solid white;
+      padding: 5px 10px;
       border-radius: 8px;
-      transition: background-color 0.3s;
+      color: white;
+      font-size: 18px;
     }
 
-    .koleksi-button:hover {
-      background-color: #6B8EAD;
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 20px;
+      position: relative;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      max-width: 700px;
+      text-align: center;
+      z-index: 1;
+    }
+
+    .dark-mode .card {
+      background: #1e1e1e;
+      color: #e0e0e0;
+    }
+
+    .time-box {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      background-color: white;
+    }
+
+    .dark-mode .time-box {
+      background-color: #2c2c2c;
+      color: white;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #9db4d3;
+      color: white;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      pointer-events: none;
     }
   </style>
 </head>
-
-<body class="bg-gray-100">
-  <div class="stars-container"></div>
-  <header class="flex flex-col sm:flex-row justify-between items-center bg-[#98AFC7] text-white p-4 gap-4">
-    <h1 class="text-xl font-bold text-center sm:text-left">Perpustakaan Siva Cahaya Suhailah</h1>
-    <nav class="flex flex-col sm:flex-row items-center gap-4">
-      <a href="index.html" class="text-white hover:underline">Home</a>
-      <a href="about.html" class="text-white hover:underline">About Me</a>
-      <a href="contact-us.html" class="text-white hover:underline">Contact Us</a>
-      <a href="koleksi.html" class="koleksi-button ml-0 sm:ml-4">Koleksi Digital</a>
+<body>
+  <header>
+    <h1>Perpustakaan Siva Cahaya Suhailah</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About Me</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Koleksi Digital</a>
     </nav>
+    <button class="toggle-btn" onclick="toggleDarkMode()">🌙</button>
   </header>
 
-  <main class="p-6 max-w-3xl mx-auto bg-white shadow-md rounded-lg mt-6">
-    <section>
-      <h2 class="text-2xl font-bold text-[#98AFC7] text-center mb-4">
-        Halo! Selamat Datang di Perpustakaan Siva Cahaya Suhailah!
-      </h2>
-      
-      <p class="mt-4 text-justify">
-        Selamat datang di halaman website saya! Terimakasih telah mengunjungi halaman website saya.
-        Website ini berisi repository pribadi saya yang akan memuat beberapa tugas saya selama satu semester
-        dalam memenuhi mata kuliah Pengembangan Web.
-      </p>
-      
-      <p class="mt-4 text-justify">
-        Website ini juga melakukan kolaborasi dengan perpustakaan lain yaitu
-        <a href="https://library.usu.ac.id/" target="_blank" class="text-blue-700 underline font-bold" rel="noopener noreferrer">
-          Perpustakaan Universitas Sumatera Utara
-        </a>,
-        yang menyediakan beberapa sumber daya informasi yang lebih lengkap.
-        Saya berharap, dengan adanya website ini dapat membantu anda dalam menemukan informasi.
-      </p>
-      
-      <p class="mt-4 font-bold text-[#98AFC7] text-center">
-        Terimakasih telah berkunjung di website saya!
-      </p>
+  <main>
+    <div class="card">
+      <p>Selamat datang di halaman website saya! Terimakasih telah mengunjungi halaman website saya.
+      Website ini berisi repository pribadi saya yang akan memuat beberapa tugas saya selama satu semester dalam memenuhi mata kuliah Pengembangan Web.</p>
+      <p>Website ini juga melakukan kolaborasi dengan perpustakaan lain yaitu <a href="https://repository.usu.ac.id/" target="_blank">Perpustakaan Universitas Sumatera Utara</a>, yang menyediakan beberapa sumber daya informasi yang lebih lengkap. Saya berharap, dengan adanya website ini dapat membantu anda dalam menemukan informasi.</p>
+      <p style="color: #6699ff;"><strong>Terimakasih telah berkunjung di website saya!</strong></p>
 
-      <div id="timeBox" class="text-center mt-6 p-4 rounded-lg shadow-lg bg-gray-200 text-xl font-bold text-[#002a8d]">
-        <p class="text-gray-700">Waktu Saat Ini:</p>
-        <p id="realTime"></p>
+      <div class="time-box">
+        <p><strong>Waktu Saat Ini:</strong></p>
+        <p id="current-time" style="color:#003399; font-weight: bold;"></p>
       </div>
-
-      <div class="text-center mt-4">
-        <button id="toggle-mode" class="px-4 py-2 bg-gray-600 text-white rounded">🌙</button>
-      </div>
-    </section>
+    </div>
   </main>
-  
-  <footer class="text-center p-4 bg-[#98AFC7] text-white mt-auto">
-    <p>© 2025 Website Perpustakaan Siva Cahaya Suhailah.</p>
+
+  <footer>
+    &copy; 2025 Website Perpustakaan Siva Cahaya Suhailah.
   </footer>
 
+  <canvas id="particles"></canvas>
+
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const starContainer = document.createElement("div");
-      starContainer.classList.add("stars-container");
-      document.body.appendChild(starContainer);
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
 
-      function createStar() {
-        const star = document.createElement("div");
-        star.classList.add("star");
-        star.style.width = `${Math.random() * 10 + 5}px`;
-        star.style.height = star.style.width;
-        star.style.left = `${Math.random() * window.innerWidth}px`;
-        star.style.animationDuration = `${Math.random() * 3 + 3}s`;
-        starContainer.appendChild(star);
-        setTimeout(() => star.remove(), 5000);
-      }
-      setInterval(createStar, 300);
+    function updateTime() {
+      const now = new Date();
+      const days = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
+      const day = days[now.getDay()];
+      const date = now.toLocaleDateString('id-ID');
+      const time = now.toLocaleTimeString('id-ID');
+      document.getElementById("current-time").innerText = `${day}, ${date}, ${time}`;
+    }
 
-      const toggleButton = document.getElementById("toggle-mode");
+    setInterval(updateTime, 1000);
+    updateTime();
 
-      function updateTheme() {
-        const isDarkMode = localStorage.getItem("darkMode") === "enabled";
-        document.body.classList.toggle("dark-mode", isDarkMode);
-        toggleButton.textContent = isDarkMode ? "☀️" : "🌙";
-      }
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-      toggleButton.addEventListener("click", function () {
-        const isDarkMode = document.body.classList.toggle("dark-mode");
-        localStorage.setItem("darkMode", isDarkMode ? "enabled" : "disabled");
-        updateTheme();
-      });
+    let particlesArray = [];
 
-      updateTheme();
-
-      function updateTime() {
-        const timeBox = document.getElementById("realTime");
-        if (!timeBox) return;
-        const now = new Date();
-        timeBox.innerHTML = now.toLocaleString("id-ID", { 
-          weekday: "long", 
-          day: "2-digit", 
-          month: "2-digit", 
-          year: "numeric", 
-          hour: "2-digit", 
-          minute: "2-digit", 
-          second: "2-digit" 
+    function createParticles() {
+      for (let i = 0; i < 100; i++) {
+        particlesArray.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          size: Math.random() * 4 + 1,
+          speedY: Math.random() * 1 + 0.5
         });
       }
-      setInterval(updateTime, 1000);
-      updateTime();
+    }
+
+    function drawParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = 'rgba(255, 223, 0, 0.6)';
+      particlesArray.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
+        p.y += p.speedY;
+        if (p.y > canvas.height) p.y = 0;
+      });
+      requestAnimationFrame(drawParticles);
+    }
+
+    createParticles();
+    drawParticles();
+
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
     });
   </script>
 </body>
