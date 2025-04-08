@@ -67,6 +67,23 @@
     .dark-mode a {
       color: #90cdf4;
     }
+
+    /* Tambahan tombol koleksi */
+    .koleksi-button {
+      display: inline-block;
+      padding: 12px 20px;
+      margin-top: 30px;
+      font-size: 18px;
+      color: white;
+      background-color: #98AFC7;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    .koleksi-button:hover {
+      background-color: #6B8EAD;
+    }
   </style>
 </head>
 
@@ -106,6 +123,11 @@
         Terimakasih telah berkunjung di website saya!
       </p>
 
+      <!-- 🔗 Tombol menuju koleksi -->
+      <div class="text-center mt-6">
+        <a href="koleksi.html" class="koleksi-button">Lihat Koleksi Buku Digital</a>
+      </div>
+
       <div id="timeBox" class="text-center mt-6 p-4 rounded-lg shadow-lg bg-gray-200 text-xl font-bold text-[#002a8d]">
         <p class="text-gray-700">Waktu Saat Ini:</p>
         <p id="realTime"></p>
@@ -123,7 +145,6 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      /* Animasi Bintang */
       const starContainer = document.createElement("div");
       starContainer.classList.add("stars-container");
       document.body.appendChild(starContainer);
@@ -140,7 +161,6 @@
       }
       setInterval(createStar, 300);
 
-      /* DARK MODE TOGGLE */
       const toggleButton = document.getElementById("toggle-mode");
 
       function updateTheme() {
@@ -155,9 +175,8 @@
         updateTheme();
       });
 
-      updateTheme(); // Panggil saat halaman dimuat
+      updateTheme();
 
-      /* UPDATE WAKTU */
       function updateTime() {
         const timeBox = document.getElementById("realTime");
         if (!timeBox) return;
