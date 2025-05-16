@@ -188,6 +188,44 @@
   </div>
 </div>
 
+<!-- Cookie Consent Banner -->
+  <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-gray-800 text-white p-4 flex flex-col md:flex-row justify-between items-center z-50 hidden">
+    <p class="text-sm mb-2 md:mb-0">
+      Website ini menggunakan cookies untuk meningkatkan pengalaman pengguna dan keamanan data.
+      <a href="privacy-policy.html" class="underline text-yellow-400">Baca kebijakan privasi</a>.
+    </p>
+    <div class="flex space-x-2">
+      <button onclick="acceptCookies()" class="bg-yellow-500 text-black px-4 py-2 rounded hover:bg-yellow-600">Saya Setuju</button>
+      <button onclick="declineCookies()" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Tolak</button>
+    </div>
+  </div>
+
+  <script>
+    function hasAcceptedCookies() {
+      return document.cookie.split('; ').some(cookie => cookie.startsWith('cookiesAccepted='));
+    }
+
+    window.onload = function () {
+      if (!hasAcceptedCookies()) {
+        document.getElementById('cookie-banner').classList.remove('hidden');
+      }
+    };
+
+    function acceptCookies() {
+      const d = new Date();
+      d.setFullYear(d.getFullYear() + 1);
+      document.cookie = "cookiesAccepted=true; expires=" + d.toUTCString() + "; path=/";
+      document.getElementById('cookie-banner').classList.add('hidden');
+    }
+
+    function declineCookies() {
+      document.cookie = "cookiesAccepted=false; path=/; max-age=0";
+      alert("Anda menolak penggunaan cookies. Beberapa fitur mungkin tidak bekerja optimal.");
+      document.getElementById('cookie-banner').classList.add('hidden');
+    }
+  </script>
+
+
   <footer>
     &copy; 2025 Website Perpustakaan Siva Cahaya Suhailah.
   </footer>
