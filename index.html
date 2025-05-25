@@ -123,6 +123,48 @@
       z-index: 0;
       pointer-events: none;
     }
+
+    /* Tambahan: Cookie Banner Modern */
+    .cookie-banner {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #1e293b;
+      color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      z-index: 1000;
+      max-width: 90%;
+      width: 400px;
+      text-align: center;
+      display: none;
+    }
+
+    .cookie-buttons {
+      margin-top: 15px;
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    .cookie-buttons button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #acceptCookies {
+      background-color: #22c55e;
+      color: white;
+    }
+
+    #rejectCookies {
+      background-color: #ef4444;
+      color: white;
+    }
   </style>
 </head>
 <body>
@@ -152,79 +194,55 @@
       </div>
     </div>
 
-      <div class="card" style="margin-top: 30px;">
-  <h2 style="color: #003399; text-align: left;">Event Perpustakaan UGM</h2>
-  
+    <div class="card" style="margin-top: 30px;">
+      <h2 style="color: #003399; text-align: left;">Event Perpustakaan UGM</h2>
+      
       <div style="display: flex; align-items: center; margin-bottom: 20px; text-align: left;">
-  <img src="img/POSTER EVENT PERTAMA.jpg" alt="Mini Class Literasi Informasi" style="width: 100px; height: auto; margin-right: 15px; border-radius: 8px;">
-  <div>
-    <a href="https://lib.ugm.ac.id/event/mini-class-literasi-informasi-september-oktober/" target="_blank" style="font-weight: bold; color: #003399; text-decoration: underline;">
-      Mini Class Literasi Informasi
-    </a><br>
-    Waktu: September–Oktober 2024<br>
-    Lokasi: Ruang Meeting WOW Gedung L1 Lantai 1, Perpustakaan dan Arsip UGM
-  </div>
-</div>
+        <img src="img/POSTER EVENT PERTAMA.jpg" alt="Mini Class Literasi Informasi" style="width: 100px; height: auto; margin-right: 15px; border-radius: 8px;">
+        <div>
+          <a href="https://lib.ugm.ac.id/event/mini-class-literasi-informasi-september-oktober/" target="_blank" style="font-weight: bold; color: #003399; text-decoration: underline;">
+            Mini Class Literasi Informasi
+          </a><br>
+          Waktu: September–Oktober 2024<br>
+          Lokasi: Ruang Meeting WOW Gedung L1 Lantai 1, Perpustakaan dan Arsip UGM
+        </div>
+      </div>
 
-<div style="display: flex; align-items: center; margin-bottom: 20px; text-align: left;">
-  <img src="img/POSTER EVENT KEDUA.jpg" alt="GMLAF Gadjah Mada Library and Archives Fair 2024" style="width: 100px; height: auto; margin-right: 15px; border-radius: 8px;">
-  <div>
-    <a href="https://lib.ugm.ac.id/event/gadjah-mada-library-and-archives-fair-gmlaf-2024/" target="_blank" style="font-weight: bold; color: #003399; text-decoration: underline;">
-      GMLAF Gadjah Mada Library and Archives Fair 2024
-    </a><br>
-    Waktu: 19–22 Agustus 2024<br>
-    Lokasi: Perpustakaan dan Arsip UGM
-  </div>
-</div>
+      <div style="display: flex; align-items: center; margin-bottom: 20px; text-align: left;">
+        <img src="img/POSTER EVENT KEDUA.jpg" alt="GMLAF Gadjah Mada Library and Archives Fair 2024" style="width: 100px; height: auto; margin-right: 15px; border-radius: 8px;">
+        <div>
+          <a href="https://lib.ugm.ac.id/event/gadjah-mada-library-and-archives-fair-gmlaf-2024/" target="_blank" style="font-weight: bold; color: #003399; text-decoration: underline;">
+            GMLAF Gadjah Mada Library and Archives Fair 2024
+          </a><br>
+          Waktu: 19–22 Agustus 2024<br>
+          Lokasi: Perpustakaan dan Arsip UGM
+        </div>
+      </div>
 
-<div style="display: flex; align-items: center; margin-bottom: 20px; text-align: left;">
-  <img src="img/POSTER EVENT KETIGA.jpg" alt="Workshop Literasi Informasi untuk Mahasiswa" style="width: 100px; height: auto; margin-right: 15px; border-radius: 8px;">
-  <div>
-    <a href="https://lib.ugm.ac.id/event/workshop-literasi-informasi-untuk-mahasiswa/" target="_blank" style="font-weight: bold; color: #003399; text-decoration: underline;">
-      Workshop Literasi Informasi untuk Mahasiswa
-    </a><br>
-    Waktu: Sabtu, 04 Mei 2019<br>
-    Lokasi: Ruang Diskusi lt.3, Perpustakaan UGM
-  </div>
-</div>
+      <div style="display: flex; align-items: center; margin-bottom: 20px; text-align: left;">
+        <img src="img/POSTER EVENT KETIGA.jpg" alt="Workshop Literasi Informasi untuk Mahasiswa" style="width: 100px; height: auto; margin-right: 15px; border-radius: 8px;">
+        <div>
+          <a href="https://lib.ugm.ac.id/event/workshop-literasi-informasi-untuk-mahasiswa/" target="_blank" style="font-weight: bold; color: #003399; text-decoration: underline;">
+            Workshop Literasi Informasi untuk Mahasiswa
+          </a><br>
+          Waktu: Sabtu, 04 Mei 2019<br>
+          Lokasi: Ruang Diskusi lt.3, Perpustakaan UGM
+        </div>
+      </div>
+    </div>
+  </main>
 
-<!-- Cookie Consent Banner -->
-  <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-gray-800 text-white p-4 flex flex-col md:flex-row justify-between items-center z-50 hidden">
-    <p class="text-sm mb-2 md:mb-0">
-      Website ini menggunakan cookies untuk meningkatkan pengalaman pengguna dan keamanan data.
-      <a href="privacy-policy.html" class="underline text-yellow-400">Baca kebijakan privasi</a>.
+  <!-- Cookie Banner Modern -->
+  <div id="cookie-banner-modern" class="cookie-banner">
+    <p>
+      Kami menggunakan cookies untuk meningkatkan pengalaman Anda di situs ini.
+      Dengan mengklik <strong>"Terima Semua"</strong>, Anda menyetujui penggunaan cookies kami.
     </p>
-    <div class="flex space-x-2">
-      <button onclick="acceptCookies()" class="bg-yellow-500 text-black px-4 py-2 rounded hover:bg-yellow-600">Saya Setuju</button>
-      <button onclick="declineCookies()" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Tolak</button>
+    <div class="cookie-buttons">
+      <button id="acceptCookies">Terima Semua</button>
+      <button id="rejectCookies">Tolak</button>
     </div>
   </div>
-
-  <script>
-    function hasAcceptedCookies() {
-      return document.cookie.split('; ').some(cookie => cookie.startsWith('cookiesAccepted='));
-    }
-
-    window.onload = function () {
-      if (!hasAcceptedCookies()) {
-        document.getElementById('cookie-banner').classList.remove('hidden');
-      }
-    };
-
-    function acceptCookies() {
-      const d = new Date();
-      d.setFullYear(d.getFullYear() + 1);
-      document.cookie = "cookiesAccepted=true; expires=" + d.toUTCString() + "; path=/";
-      document.getElementById('cookie-banner').classList.add('hidden');
-    }
-
-    function declineCookies() {
-      document.cookie = "cookiesAccepted=false; path=/; max-age=0";
-      alert("Anda menolak penggunaan cookies. Beberapa fitur mungkin tidak bekerja optimal.");
-      document.getElementById('cookie-banner').classList.add('hidden');
-    }
-  </script>
-
 
   <footer>
     &copy; 2025 Website Perpustakaan Siva Cahaya Suhailah.
@@ -286,6 +304,28 @@
     window.addEventListener("resize", () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
+    });
+
+    // Cookie Banner Modern Script
+    document.addEventListener("DOMContentLoaded", function () {
+      const banner = document.getElementById("cookie-banner-modern");
+      const acceptBtn = document.getElementById("acceptCookies");
+      const rejectBtn = document.getElementById("rejectCookies");
+
+      if (!localStorage.getItem("cookieConsentModern")) {
+        banner.style.display = "block";
+      }
+
+      acceptBtn.addEventListener("click", function () {
+        localStorage.setItem("cookieConsentModern", "accepted");
+        banner.style.display = "none";
+      });
+
+      rejectBtn.addEventListener("click", function () {
+        localStorage.setItem("cookieConsentModern", "rejected");
+        banner.style.display = "none";
+        alert("Anda menolak penggunaan cookies. Beberapa fitur mungkin tidak bekerja optimal.");
+      });
     });
   </script>
 </body>
