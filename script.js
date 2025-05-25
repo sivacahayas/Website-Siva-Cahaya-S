@@ -1,3 +1,5 @@
+SCRIPT JS YG UDH ADA COOKIENYA
+
 document.addEventListener("DOMContentLoaded", function () {
     const starContainer = document.createElement("div");
     starContainer.classList.add("stars-container");
@@ -65,4 +67,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setInterval(updateTime, 1000);
     updateTime();
+
+    // ========== COOKIE BANNER ==========
+
+    if (!localStorage.getItem("cookieConsent")) {
+        const cookieBanner = document.createElement("div");
+        cookieBanner.className = "cookie-banner";
+        cookieBanner.innerHTML = `
+            <p>Website ini menggunakan cookie untuk meningkatkan pengalaman pengguna. Setuju?</p>
+            <button class="accept">Setuju</button>
+            <button class="decline">Tolak</button>
+        `;
+
+        document.body.appendChild(cookieBanner);
+
+        const acceptBtn = cookieBanner.querySelector(".accept");
+        const declineBtn = cookieBanner.querySelector(".decline");
+
+        acceptBtn.addEventListener("click", function () {
+            localStorage.setItem("cookieConsent", "accepted");
+            cookieBanner.remove();
+        });
+
+        declineBtn.addEventListener("click", function () {
+            localStorage.setItem("cookieConsent", "declined");
+            cookieBanner.remove();
+        });
+    }
 });
+
