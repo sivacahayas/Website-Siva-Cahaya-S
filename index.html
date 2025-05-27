@@ -72,6 +72,27 @@
       font-size: 18px;
     }
 
+    /* Form Pencarian Kiri Atas */
+    .search-form {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+
+    .search-form input {
+      padding: 5px 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .search-form button {
+      padding: 5px 10px;
+      border-radius: 8px;
+      background-color: #003399;
+      color: white;
+      border: none;
+    }
+
     main {
       display: flex;
       flex-direction: column;
@@ -176,6 +197,12 @@
 </head>
 <body>
   <header>
+    <!-- 🔍 Form pencarian buku -->
+    <form action="koleksi.html" method="get" class="search-form">
+      <input type="text" name="search" placeholder="Cari buku...">
+      <button type="submit">Cari</button>
+    </form>
+
     <h1>Perpustakaan Siva Cahaya Suhailah</h1>
     <nav>
       <a href="index.html">Home</a>
