@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -89,6 +88,7 @@
       max-width: 700px;
       text-align: center;
       z-index: 1;
+      width: 100%;
     }
 
     .dark-mode .card {
@@ -124,7 +124,6 @@
       pointer-events: none;
     }
 
-    /* Tambahan: Cookie Banner Modern */
     .cookie-banner {
       position: fixed;
       bottom: 30px;
@@ -165,6 +164,15 @@
       background-color: #ef4444;
       color: white;
     }
+
+    /* Search input style */
+    #searchInput {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
   </style>
 </head>
 <body>
@@ -176,7 +184,7 @@
       <a href="contact-us.html" target="_blank">Contact Us</a>
       <a href="koleksi.html" target="_blank">Koleksi Digital</a>
       <a href="tabel_perkalian.php">Tabel Perkalian</a>  
-      <a href="formulir_pengunjung.php">Formulir Pengunjung<a/a>
+      <a href="formulir_pengunjung.php">Formulir Pengunjung</a>
     </nav>
     <button class="toggle-btn" onclick="toggleDarkMode()">🌙</button>
   </header>
@@ -195,9 +203,14 @@
     </div>
 
     <div class="card" style="margin-top: 30px;">
+      <h2 style="color: #003399; text-align: left;">Cari Event Perpustakaan</h2>
+      <input type="text" id="searchInput" placeholder="Ketik untuk mencari event...">
+    </div>
+
+    <div class="card" style="margin-top: 10px;" id="eventContainer">
       <h2 style="color: #003399; text-align: left;">Event Perpustakaan UGM</h2>
-      
-      <div style="display: flex; align-items: center; margin-bottom: 20px; text-align: left;">
+
+      <div class="event-item" style="display: flex; align-items: center; margin-bottom: 20px; text-align: left;">
         <img src="img/POSTER EVENT PERTAMA.jpg" alt="Mini Class Literasi Informasi" style="width: 100px; height: auto; margin-right: 15px; border-radius: 8px;">
         <div>
           <a href="https://lib.ugm.ac.id/event/mini-class-literasi-informasi-september-oktober/" target="_blank" style="font-weight: bold; color: #003399; text-decoration: underline;">
@@ -208,7 +221,7 @@
         </div>
       </div>
 
-      <div style="display: flex; align-items: center; margin-bottom: 20px; text-align: left;">
+      <div class="event-item" style="display: flex; align-items: center; margin-bottom: 20px; text-align: left;">
         <img src="img/POSTER EVENT KEDUA.jpg" alt="GMLAF Gadjah Mada Library and Archives Fair 2024" style="width: 100px; height: auto; margin-right: 15px; border-radius: 8px;">
         <div>
           <a href="https://lib.ugm.ac.id/event/gadjah-mada-library-and-archives-fair-gmlaf-2024/" target="_blank" style="font-weight: bold; color: #003399; text-decoration: underline;">
@@ -219,7 +232,7 @@
         </div>
       </div>
 
-      <div style="display: flex; align-items: center; margin-bottom: 20px; text-align: left;">
+      <div class="event-item" style="display: flex; align-items: center; margin-bottom: 20px; text-align: left;">
         <img src="img/POSTER EVENT KETIGA.jpg" alt="Workshop Literasi Informasi untuk Mahasiswa" style="width: 100px; height: auto; margin-right: 15px; border-radius: 8px;">
         <div>
           <a href="https://lib.ugm.ac.id/event/workshop-literasi-informasi-untuk-mahasiswa/" target="_blank" style="font-weight: bold; color: #003399; text-decoration: underline;">
@@ -232,7 +245,6 @@
     </div>
   </main>
 
-  <!-- Cookie Banner Modern -->
   <div id="cookie-banner-modern" class="cookie-banner">
     <p>
       Kami menggunakan cookies untuk meningkatkan pengalaman Anda di situs ini.
@@ -306,7 +318,7 @@
       canvas.height = window.innerHeight;
     });
 
-    // Cookie Banner Modern Script
+    // Cookie Banner Modern
     document.addEventListener("DOMContentLoaded", function () {
       const banner = document.getElementById("cookie-banner-modern");
       const acceptBtn = document.getElementById("acceptCookies");
@@ -325,6 +337,17 @@
         localStorage.setItem("cookieConsentModern", "rejected");
         banner.style.display = "none";
         alert("Anda menolak penggunaan cookies. Beberapa fitur mungkin tidak bekerja optimal.");
+      });
+    });
+
+    // Fitur Search Event
+    document.getElementById('searchInput').addEventListener('input', function () {
+      const query = this.value.toLowerCase();
+      const items = document.querySelectorAll('.event-item');
+
+      items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(query) ? 'flex' : 'none';
       });
     });
   </script>
