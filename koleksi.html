@@ -50,5 +50,18 @@
 
   <!-- 🧠 Skrip pencarian -->
   <script src="script.js"></script>
+
+  <!-- 🆕 Auto isi kolom search dari URL -->
+  <script>
+    // Ambil parameter ?search= dari URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchTerm = urlParams.get('search');
+
+    if (searchTerm) {
+      const input = document.getElementById('searchInput');
+      input.value = searchTerm;
+      input.dispatchEvent(new Event('input')); // Trigger pencarian otomatis
+    }
+  </script>
 </body>
 </html>
