@@ -5,84 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Koleksi Buku</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-      text-align: center;
-      padding: 30px;
-    }
-
-    h1 {
-      color: #333;
-    }
-
-    .book-card {
-      background: white;
-      padding: 20px;
-      margin: 20px auto;
-      width: 250px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      text-align: center;
-    }
-
-    .book-card img {
-      width: 150px;
-      height: auto;
-      border-radius: 12px;
-    }
-
-    .book-card h3 {
-      margin-top: 10px;
-    }
-
-    .book-card a {
-      display: inline-block;
-      margin-top: 10px;
-      color: #003399;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .book-card a:hover {
-      text-decoration: underline;
-      color: #f39c12;
-    }
-  </style>
 </head>
 <body>
   <h1>Koleksi Buku Digital</h1>
 
-  <div class="book-card">
-    <img src="img/cover%20buku%20filosofi%20teras.png" alt="Cover Filosofi Teras" class="book-cover">
-    <h3>Filosofi Teras</h3>
-    <a href="files/ebook-filosofi-teras.pdf" target="_blank">📖 Baca Buku (PDF)</a>
+  <!-- 🔍 Search bar -->
+  <input type="text" id="searchInput" placeholder="Cari buku..." />
+
+  <!-- 💡 Pesan jika tidak ada hasil -->
+  <div id="noResults">Buku tidak ditemukan 😢</div>
+
+  <!-- 📚 Daftar buku -->
+  <div id="bookContainer">
+    <div class="book-card">
+      <img src="img/cover%20buku%20filosofi%20teras.png" alt="Cover Filosofi Teras" class="book-cover">
+      <h3>Filosofi Teras</h3>
+      <a href="files/ebook-filosofi-teras.pdf" target="_blank">📖 Baca Buku (PDF)</a>
+    </div>
+
+    <div class="book-card">
+      <img src="img/cover%20buku%20seni%20mencintai%20diri%20sendiri.jpg" alt="Cover Seni Mencintai Diri Sendiri" class="book-cover">
+      <h3>Seni Mencintai Diri Sendiri</h3>
+      <a href="files/EBOOK%20SENI%20MENCINTAI%20DIRI%20SENDIRI.pdf" target="_blank">📖 Baca Buku (PDF)</a>
+    </div>
+
+    <div class="book-card">
+      <img src="img/cover%20buku%20laut%20bercerita.jpg" alt="Cover Laut Bercerita" class="book-cover">
+      <h3>Laut Bercerita</h3>
+      <a href="files/ebook%20laut%20bercerita.pdf" target="_blank">📖 Baca Buku (PDF)</a>
+    </div>
+
+    <div class="book-card">
+      <img src="img/cover%20buku%20hujan.jpg" alt="Cover Hujan" class="book-cover">
+      <h3>Hujan</h3>
+      <a href="files/ebook%20hujan.pdf" target="_blank">📖 Baca Buku (PDF)</a>
+    </div>
+
+    <div class="book-card">
+      <img src="img/cover buku The Chimp Paradox, Mengelola Pikiran Untuk Mencapai Kesuksesan dan Kebahagiaan.png" alt="Cover The Chimp Paradox" class="book-cover">
+      <h3>The Chimp Paradox, Mengelola Pikiran Untuk Mencapai Kesuksesan dan Kebahagiaan</h3>
+      <a href="files/ebook The Chimp Paradox, Mengelola Pikiran Untuk Mencapai Kesuksesan dan Kebahagiaan.pdf" target="_blank">📖 Baca Buku (PDF)</a>
+    </div>
   </div>
 
-  <div class="book-card">
-    <img src="img/cover%20buku%20seni%20mencintai%20diri%20sendiri.jpg" alt="Cover Seni Mencintai Diri Sendiri" class="book-cover">
-    <h3>Seni Mencintai Diri Sendiri</h3>
-    <a href="files/EBOOK%20SENI%20MENCINTAI%20DIRI%20SENDIRI.pdf" target="_blank">📖 Baca Buku (PDF)</a>
-  </div>
-
-  <div class="book-card">
-    <img src="img/cover%20buku%20laut%20bercerita.jpg" alt="Cover Laut Bercerita" class="book-cover">
-    <h3>Laut Bercerita</h3>
-    <a href="files/ebook%20laut%20bercerita.pdf" target="_blank">📖 Baca Buku (PDF)</a>
-  </div>
-
-  <div class="book-card">
-    <img src="img/cover%20buku%20hujan.jpg" alt="Cover Hujan" class="book-cover">
-    <h3>Hujan</h3>
-    <a href="files/ebook%20hujan.pdf" target="_blank">📖 Baca Buku (PDF)</a>
-  </div>
-
- <div class="book-card">
-    <img src="img/cover buku The Chimp Paradox, Mengelola Pikiran Untuk Mencapai Kesuksesan dan Kebahagiaan.png" alt="Cover Hujan" class="book-cover">
-    <h3>The Chimp Paradox, Mengelola Pikiran Untuk Mencapai Kesuksesan dan Kebahagiaan</h3>
-    <a href="files/ebook The Chimp Paradox, Mengelola Pikiran Untuk Mencapai Kesuksesan dan Kebahagiaan.pdf" target="_blank">📖 Baca Buku (PDF)</a>
-  </div>
-
+  <!-- 🧠 Skrip pencarian -->
+  <script src="script.js"></script>
 </body>
 </html>
