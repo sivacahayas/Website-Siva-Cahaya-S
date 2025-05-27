@@ -1,5 +1,3 @@
-SCRIPT JS YG UDH ADA COOKIENYA
-
 document.addEventListener("DOMContentLoaded", function () {
     const starContainer = document.createElement("div");
     starContainer.classList.add("stars-container");
@@ -69,7 +67,6 @@ document.addEventListener("DOMContentLoaded", function () {
     updateTime();
 
     // ========== COOKIE BANNER ==========
-
     if (!localStorage.getItem("cookieConsent")) {
         const cookieBanner = document.createElement("div");
         cookieBanner.className = "cookie-banner";
@@ -94,5 +91,23 @@ document.addEventListener("DOMContentLoaded", function () {
             cookieBanner.remove();
         });
     }
-});
 
+    // ========== FITUR SEARCH ==========
+    const searchInput = document.getElementById("searchInput");
+    const bookCards = document.querySelectorAll(".book-card");
+
+    if (searchInput && bookCards.length > 0) {
+        searchInput.addEventListener("input", function () {
+            const keyword = this.value.toLowerCase();
+
+            bookCards.forEach(function (card) {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(keyword)) {
+                    card.style.display = "inline-block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        });
+    }
+});
